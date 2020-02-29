@@ -1,0 +1,6 @@
+framework module Pods_TMCamera_Example {
+  umbrella header "Pods-TMCamera_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +18,61 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-go-t2G">
+                                <rect key="frame" x="145" y="567" width="84" height="40"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="eMX-VX-Q8q"/>
+                                </constraints>
+                                <state key="normal" title="拍照">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="openCamera:" destination="whP-gf-Uak" eventType="touchUpInside" id="c17-5e-oD8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-4k-8Cc">
+                                <rect key="frame" x="145" y="484" width="84" height="40"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ef7-FU-ufb"/>
+                                </constraints>
+                                <state key="normal" title="相册">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="openLibrary:" destination="whP-gf-Uak" eventType="touchUpInside" id="JV5-L1-K2Q"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="453-ss-k9q">
+                                <rect key="frame" x="16" y="147" width="343" height="246"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="246" id="rAt-kh-hW1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="453-ss-k9q" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="147" id="0h1-tG-OA7"/>
+                            <constraint firstItem="453-ss-k9q" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="9Pv-te-3OY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kyj-4k-8Cc" secondAttribute="trailing" constant="130" id="L1t-LM-QAW"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="fkR-go-t2G" secondAttribute="bottom" constant="60" id="LQ1-YH-l8B"/>
+                            <constraint firstItem="453-ss-k9q" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="16" id="MZC-8G-uJT"/>
+                            <constraint firstItem="fkR-go-t2G" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="129" id="Q7E-lw-Oan"/>
+                            <constraint firstAttribute="trailing" secondItem="453-ss-k9q" secondAttribute="trailing" constant="16" id="hog-vm-oWh"/>
+                            <constraint firstItem="kyj-4k-8Cc" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="129" id="jqG-6r-3xw"/>
+                            <constraint firstItem="fkR-go-t2G" firstAttribute="top" secondItem="kyj-4k-8Cc" secondAttribute="bottom" constant="43" id="kbe-Pd-xqF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fkR-go-t2G" secondAttribute="trailing" constant="130" id="nOo-Ot-Who"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="453-ss-k9q" id="2n2-vq-BnM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="61.600000000000001" y="319.79010494752629"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,16 @@
+PODS:
+  - TMCamera (0.1.0)
+
+DEPENDENCIES:
+  - TMCamera (from `../`)
+
+EXTERNAL SOURCES:
+  TMCamera:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TMCamera: 83315c3661697b381d6291b1f39232d45610f7a5
+
+PODFILE CHECKSUM: 0aab54cb44bb5b71941aeefda4e83843120b8408
+
+COCOAPODS: 1.8.4
