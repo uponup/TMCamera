@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 实现了相机功能；从相册获取照片；裁剪照片功能；
                        DESC
 
-  s.homepage         = 'https://github.com/uponup/JPKit.git'
+  s.homepage         = 'https://github.com/uponup/TMCamera'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'uponup' => '1030360567@qq.com' }
-  s.source           = { :git => 'https://github.com/uponup/JPKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/uponup/TMCamera.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
