@@ -163,6 +163,7 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(cameraVc:takesPhoto:)]) {
         [self dismissViewControllerAnimated:YES completion:nil];
         [self.delegate cameraVc:self takesPhoto:image];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -231,7 +232,6 @@
         }
         else{
             NSLog(@"%@", error);
-
         }
     }
 }

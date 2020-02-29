@@ -55,7 +55,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KR6-mb-Ac0" secondAttribute="trailing" constant="40" id="0at-YE-3ih"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KR6-mb-Ac0" secondAttribute="trailing" constant="32" id="0at-YE-3ih"/>
                         <constraint firstItem="HDn-hv-gGH" firstAttribute="centerY" secondItem="VuW-PE-9nm" secondAttribute="centerY" id="4JS-40-bg7"/>
                         <constraint firstItem="HDn-hv-gGH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rG6-Lu-wlR" secondAttribute="leading" constant="40" id="Kg6-To-4Zb"/>
                         <constraint firstItem="VuW-PE-9nm" firstAttribute="centerX" secondItem="rG6-Lu-wlR" secondAttribute="centerX" id="Plz-3Q-aHD"/>
