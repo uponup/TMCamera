@@ -32,7 +32,7 @@
 @implementation TMCameraController
 
 - (instancetype)init {
-    self = [super init];
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle tm_subBundleWithBundleName:@"TMCamera" targetClass:[self class]]];
     if (self) {
         self.modalPresentationStyle = UIModalPresentationFullScreen;
     }
