@@ -6,15 +6,12 @@
 //  Copyright © 2020 uponup. All rights reserved.
 //
 
-#import <AppKit/AppKit.h>
-
-
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSBundle (TMBundle)
-
++ (instancetype)tm_subBundleWithBundleName:(NSString *)bundleName targetClass:(Class)targetClass;
 @end
 
 NS_ASSUME_NONNULL_END
