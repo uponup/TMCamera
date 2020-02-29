@@ -1,5 +1,5 @@
 PODS:
-  - TMCamera (0.1.1)
+  - TMCamera (0.1.3)
 
 DEPENDENCIES:
   - TMCamera (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TMCamera: ba187c82be54a58ab0728c05f44ab04aa47c482e
+  TMCamera: 7081f2bf1016da56fd247bbe896f6caeee8dd8d7
 
 PODFILE CHECKSUM: 0aab54cb44bb5b71941aeefda4e83843120b8408
 

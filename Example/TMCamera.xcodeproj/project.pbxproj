@@ -79,7 +79,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9922BEA5279206E3E4DF8577 /* Pods-TMCamera_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMCamera_Example.debug.xcconfig"; path = "Target Support Files/Pods-TMCamera_Example/Pods-TMCamera_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BFBD15B5449172F70C669F99 /* Pods-TMCamera_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMCamera_Tests.release.xcconfig"; path = "Target Support Files/Pods-TMCamera_Tests/Pods-TMCamera_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D7AF29712D7D9EE2DC3EF022 /* TMCamera.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TMCamera.podspec; path = ../TMCamera.podspec; sourceTree = "<group>"; };
+		D7AF29712D7D9EE2DC3EF022 /* TMCamera.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TMCamera.podspec; path = ../TMCamera.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
