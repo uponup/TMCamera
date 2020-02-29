@@ -9,6 +9,7 @@
 #import "TMCameraController.h"
 #import "TMClipViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "NSBundle+TMBundle.h"
 
 #define KWIDTH [UIScreen mainScreen].bounds.size.width
 #define KHEIGHT [UIScreen mainScreen].bounds.size.height
