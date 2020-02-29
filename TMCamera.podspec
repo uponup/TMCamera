@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TMCamera'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TMCamera.'
+  s.summary          = '简单实用的相机，可裁剪照片'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+实现了相机功能；从相册获取照片；裁剪照片功能；
                        DESC
 
   s.homepage         = 'https://github.com/uponup/TMCamera'

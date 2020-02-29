@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "TKImageView.h"
+#import "TMCameraController.h"
+#import "TMClipViewController.h"
 
 FOUNDATION_EXPORT double TMCameraVersionNumber;
 FOUNDATION_EXPORT const unsigned char TMCameraVersionString[];
