@@ -1,8 +1,8 @@
 {
   "name": "TMCamera",
   "version": "0.1.0",
-  "summary": "A short description of TMCamera.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "简单实用的相机，可裁剪照片",
+  "description": "实现了相机功能；从相册获取照片；裁剪照片功能；",
   "homepage": "https://github.com/uponup/TMCamera",
   "license": {
     "type": "MIT",
