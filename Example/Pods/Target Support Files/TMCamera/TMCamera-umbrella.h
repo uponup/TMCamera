@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "NSBundle+TMBundle.h"
 #import "TKImageView.h"
 #import "TMCameraController.h"
 #import "TMClipViewController.h"
