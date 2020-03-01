@@ -19,11 +19,6 @@
     "ios": "9.3"
   },
   "source_files": "TMCamera/Classes/**/*",
-  "resource_bundles": {
-    "TMCamera": [
-      "TMCamera/Assets/*"
-    ]
-  },
   "dependencies": {
     "PureLayout": [
 
