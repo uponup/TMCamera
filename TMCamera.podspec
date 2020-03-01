@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TMCamera'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = '简单实用的相机，可裁剪照片'
 
 # This description is used to generate tags and improve search results.

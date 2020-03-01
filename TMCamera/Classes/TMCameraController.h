@@ -27,6 +27,8 @@ typedef NS_ENUM(NSInteger, TMCameraAuthStatus) {
 
 @interface TMCameraController : UIViewController
 @property (nonatomic, assign) id<TMCameraControllerDelegate> delegate;
+
+//- (instancetype)init;
 @end
 
 NS_ASSUME_NONNULL_END

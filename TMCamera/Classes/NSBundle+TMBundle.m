@@ -10,20 +10,32 @@
 
 @implementation NSBundle (TMBundle)
 
-+ (instancetype)tm_subBundleWithBundleName:(NSString *)bundleName targetClass:(Class)targetClass {
-    //并没有拿到子bundle
-    NSBundle *bundle = [NSBundle bundleForClass:targetClass];
-    //在这个路径下找到子bundle的路径
-    NSString *path = [bundle pathForResource:bundleName ofType:@"bundle"];
-    //根据路径拿到子bundle
-    return path?[NSBundle bundleWithPath:path]:[NSBundle mainBundle];
++ (instancetype)tm_subBundleWithBundleName:(NSString *)bundleName podName:(NSString *)podName {
+    if (bundleName == nil && podName == nil) {
+        @throw @"bundleName和podName不能同时为空";
+    }else if (bundleName == nil ) {
+        bundleName = podName;
+    }else if (podName == nil) {
+        podName = bundleName;
+    }
     
-    /*
-     这种方式也可以
-     NSBundle *bundle = [NSBundle bundleForClass:targetClass];
-     NSURL *url = [bundle URLForResource:bundleName withExtension:@"bundle"];
-     return path?[NSBundle bundleWithURL:url]:[NSBundle mainBundle];
-     */
+    
+    if ([bundleName containsString:@".bundle"]) {
+        bundleName = [bundleName componentsSeparatedByString:@".bundle"].firstObject;
+    }
+    //没使用framwork的情况下
+    NSURL *associateBundleURL = [[NSBundle mainBundle] URLForResource:bundleName withExtension:@"bundle"];
+    //使用framework形式
+    if (!associateBundleURL) {
+        associateBundleURL = [[NSBundle mainBundle] URLForResource:@"Frameworks" withExtension:nil];
+        associateBundleURL = [associateBundleURL URLByAppendingPathComponent:podName];
+        associateBundleURL = [associateBundleURL URLByAppendingPathExtension:@"framework"];
+    }
+    NSBundle *associateBunle = [NSBundle bundleWithPath:[associateBundleURL.path stringByAppendingPathComponent:@"TMCamera.bundle"]];
+
+    NSAssert(associateBunle, @"取不到关联bundle");
+    //生产环境直接返回空
+    return associateBunle?associateBunle:nil;
 }
 
 @end

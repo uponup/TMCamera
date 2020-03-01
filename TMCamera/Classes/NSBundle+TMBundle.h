@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSBundle (TMBundle)
-+ (instancetype)tm_subBundleWithBundleName:(NSString *)bundleName targetClass:(Class)targetClass;
++ (instancetype)tm_subBundleWithBundleName:(NSString *)bundleName podName:(NSString *)podName;
 @end
 
 NS_ASSUME_NONNULL_END

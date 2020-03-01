@@ -36,10 +36,10 @@
 
 - (IBAction)openCamera:(id)sender {
     // 设备不可用  直接返回
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        NSLog(@"没有权限");
-        return;
-    }
+//    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        NSLog(@"没有权限");
+//        return;
+//    }
     
     TMCameraController *cameraVc = [[TMCameraController alloc] init];
     cameraVc.delegate = self;

@@ -25,7 +25,7 @@
 @implementation TMClipViewController
 
 - (instancetype)init {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle tm_subBundleWithBundleName:@"TMCamera" targetClass:[self class]]];
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle tm_subBundleWithBundleName:@"TMClipViewController" podName:@"TMCamera"]];
     return self;
 }
 
