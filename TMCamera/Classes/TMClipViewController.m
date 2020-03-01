@@ -8,24 +8,21 @@
 
 #import "TMClipViewController.h"
 #import "TKImageView.h"
-#import "NSBundle+TMBundle.h"
+#import "TMCamera.h"
 
-#define KWIDTH [UIScreen mainScreen].bounds.size.width
-#define KHEIGHT [UIScreen mainScreen].bounds.size.height
-
-@interface TMClipViewController () {
+@interface TMClipViewController ()<TMBottomViewDelegate> {
     UIImage *_originalImage;
     BOOL _isClip;
 }
-@property (weak, nonatomic) IBOutlet UIView *headView;
+@property (nonatomic, strong) UIView *headerView;
+@property (nonatomic, strong) TMBottomView *bottomView;
 @property (nonatomic, strong) TKImageView *tkImageView;
-@property (weak, nonatomic) IBOutlet UIView *bottomView;
 @end
 
 @implementation TMClipViewController
 
 - (instancetype)init {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle tm_subBundleWithBundleName:@"TMClipViewController" podName:@"TMCamera"]];
+    self = [super init];
     return self;
 }
 
@@ -43,32 +40,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.view addSubview:self.tkImageView];
+    [self commonInit];
     self.tkImageView.toCropImage = _originalImage;
 }
 
-- (IBAction)dismissAction:(id)sender {
+- (void)dismissAction:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 // 临时裁剪
-- (IBAction)resizeAction:(UIButton *)sender {
+- (void)resizeAction:(UIButton *)sender {
     sender.selected = !sender.selected;
     _isClip = sender.selected;
     if (_isClip) {
-        sender.titleLabel.text = @"重来";
+        [sender setTitle:@"重来" forState:UIControlStateNormal];
         self.tkImageView.toCropImage = [_tkImageView currentCroppedImage];
     }else {
-        sender.titleLabel.text = @"裁剪";
+        [sender setTitle:@"裁剪" forState:UIControlStateNormal];
         self.tkImageView.toCropImage = _originalImage;
     }
     
     self.tkImageView.cropAreaBorderLineWidth = _isClip ? 0 : 1;
     self.tkImageView.showLine = !_isClip;
-
 }
 
-- (IBAction)saveAction:(id)sender {
+- (void)saveAction:(id)sender {
     //裁剪
     if (_isClip) {
         UIImage *image = [_tkImageView currentCroppedImage];
@@ -83,14 +79,44 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - TMBottomViewDelegate
+- (void)bottomView:(TMBottomView *)view didClickAtIndex:(NSInteger)index andSender:(UIButton *)sender {
+    if (index==0) {
+        [self dismissAction:sender];
+    }else if (index==1) {
+        [self resizeAction:sender];
+    }else {
+        [self saveAction:sender];
+    }
+}
+
+#pragma mark - UI Init
+- (void)commonInit {
+    self.view.backgroundColor = UIColor.whiteColor;
+    
+    UIView *topView = [UIView new];
+    topView.backgroundColor = [UIColor colorWithHue:0 saturation:0 brightness:0 alpha:0.6];
+    [self.view addSubview:topView];
+    [topView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+    [topView autoSetDimension:ALDimensionHeight toSize:STATUS_HEIGHT];
+
+    [self.view addSubview:self.bottomView];
+    [self.bottomView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+    
+    [self.view addSubview:self.tkImageView];
+    [self.tkImageView autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [self.tkImageView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:topView];
+    [self.tkImageView autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:self.bottomView];
+    [self.tkImageView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+}
 
 #pragma mark - Lazy Methpd
 
 - (TKImageView *)tkImageView {
     if (!_tkImageView) {
-        CGFloat top = self.headView.frame.size.height;
+        CGFloat top = self.headerView.frame.size.height;
         
-        _tkImageView = [[TKImageView alloc] initWithFrame:CGRectMake(0, top, KWIDTH, KHEIGHT - top -  self.bottomView.frame.size.height)];
+        _tkImageView = [[TKImageView alloc] initWithFrame:CGRectZero];
         _tkImageView.backgroundColor = UIColor.lightTextColor;
         //需要进行裁剪的图片对象
         //是否显示中间线
@@ -120,5 +146,14 @@
     return _tkImageView;
 }
 
-
+- (TMBottomView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [[TMBottomView alloc] init];
+        _bottomView.leftTitle = @"取消";
+        _bottomView.midTitle = @"裁剪";
+        _bottomView.rightTitle = @"完成";
+        _bottomView.delegate = self;
+    }
+    return _bottomView;
+}
 @end

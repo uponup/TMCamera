@@ -10,12 +10,9 @@
 		367A0D831801714A12CD1604 /* Pods_TMCamera_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD4E276DE4704358C5B40A7 /* Pods_TMCamera_Example.framework */; };
 		39081309240ABF6E0012A0AD /* TMCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39081303240ABF6D0012A0AD /* TMCameraController.m */; };
 		3908130A240ABF6E0012A0AD /* TMClipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39081305240ABF6D0012A0AD /* TMClipViewController.m */; };
-		3908130B240ABF6E0012A0AD /* NSBundle+TMBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 39081306240ABF6D0012A0AD /* NSBundle+TMBundle.m */; };
-		3908130E240ABF780012A0AD /* TMCameraController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3908130C240ABF780012A0AD /* TMCameraController.xib */; };
-		3908130F240ABF780012A0AD /* TMClipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3908130D240ABF780012A0AD /* TMClipViewController.xib */; };
-		39081316240B333F0012A0AD /* TMBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39081315240B333F0012A0AD /* TMBottomView.m */; };
-		39081319240B33490012A0AD /* TMTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39081318240B33490012A0AD /* TMTopView.m */; };
 		3908131C240B35B30012A0AD /* TKImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3908131A240B35B30012A0AD /* TKImageView.m */; };
+		39081323240B4CEB0012A0AD /* TMTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39081320240B4CEB0012A0AD /* TMTopView.m */; };
+		39081324240B4CEB0012A0AD /* TMBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39081321240B4CEB0012A0AD /* TMBottomView.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -50,18 +47,15 @@
 		25200505DFF5F786D4E710B2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		39081301240ABF6D0012A0AD /* TMClipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMClipViewController.h; path = ../../TMCamera/Classes/TMClipViewController.h; sourceTree = "<group>"; };
 		39081303240ABF6D0012A0AD /* TMCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMCameraController.m; path = ../../TMCamera/Classes/TMCameraController.m; sourceTree = "<group>"; };
-		39081304240ABF6D0012A0AD /* NSBundle+TMBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSBundle+TMBundle.h"; path = "../../TMCamera/Classes/NSBundle+TMBundle.h"; sourceTree = "<group>"; };
 		39081305240ABF6D0012A0AD /* TMClipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMClipViewController.m; path = ../../TMCamera/Classes/TMClipViewController.m; sourceTree = "<group>"; };
-		39081306240ABF6D0012A0AD /* NSBundle+TMBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+TMBundle.m"; path = "../../TMCamera/Classes/NSBundle+TMBundle.m"; sourceTree = "<group>"; };
 		39081307240ABF6D0012A0AD /* TMCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMCameraController.h; path = ../../TMCamera/Classes/TMCameraController.h; sourceTree = "<group>"; };
-		3908130C240ABF780012A0AD /* TMCameraController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TMCameraController.xib; path = ../../TMCamera/Assets/TMCameraController.xib; sourceTree = "<group>"; };
-		3908130D240ABF780012A0AD /* TMClipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TMClipViewController.xib; path = ../../TMCamera/Assets/TMClipViewController.xib; sourceTree = "<group>"; };
-		39081314240B333F0012A0AD /* TMBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMBottomView.h; sourceTree = "<group>"; };
-		39081315240B333F0012A0AD /* TMBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMBottomView.m; sourceTree = "<group>"; };
-		39081317240B33490012A0AD /* TMTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMTopView.h; sourceTree = "<group>"; };
-		39081318240B33490012A0AD /* TMTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMTopView.m; sourceTree = "<group>"; };
 		3908131A240B35B30012A0AD /* TKImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKImageView.m; path = ../../TMCamera/Classes/TKImageView.m; sourceTree = "<group>"; };
 		3908131B240B35B30012A0AD /* TKImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKImageView.h; path = ../../TMCamera/Classes/TKImageView.h; sourceTree = "<group>"; };
+		3908131F240B4CEB0012A0AD /* TMBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMBottomView.h; path = ../../TMCamera/Classes/TMBottomView.h; sourceTree = "<group>"; };
+		39081320240B4CEB0012A0AD /* TMTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMTopView.m; path = ../../TMCamera/Classes/TMTopView.m; sourceTree = "<group>"; };
+		39081321240B4CEB0012A0AD /* TMBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMBottomView.m; path = ../../TMCamera/Classes/TMBottomView.m; sourceTree = "<group>"; };
+		39081322240B4CEB0012A0AD /* TMTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMTopView.h; path = ../../TMCamera/Classes/TMTopView.h; sourceTree = "<group>"; };
+		393C0D3C240B504E00F72AD2 /* TMCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMCamera.h; path = ../../TMCamera/Classes/TMCamera.h; sourceTree = "<group>"; };
 		4D88C36D4051F43643CD1864 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		506B472F94FAD684E5AFC374 /* Pods_TMCamera_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMCamera_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* TMCamera_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMCamera_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,12 +114,13 @@
 		39081313240B31FE0012A0AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				39081314240B333F0012A0AD /* TMBottomView.h */,
-				39081315240B333F0012A0AD /* TMBottomView.m */,
-				39081317240B33490012A0AD /* TMTopView.h */,
-				39081318240B33490012A0AD /* TMTopView.m */,
+				3908131F240B4CEB0012A0AD /* TMBottomView.h */,
+				39081321240B4CEB0012A0AD /* TMBottomView.m */,
+				39081322240B4CEB0012A0AD /* TMTopView.h */,
+				39081320240B4CEB0012A0AD /* TMTopView.m */,
 				3908131B240B35B30012A0AD /* TKImageView.h */,
 				3908131A240B35B30012A0AD /* TKImageView.m */,
+				393C0D3C240B504E00F72AD2 /* TMCamera.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -173,15 +168,11 @@
 				6003F5A5195388D20070C39A /* TMViewController.h */,
 				6003F5A6195388D20070C39A /* TMViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				39081304240ABF6D0012A0AD /* NSBundle+TMBundle.h */,
-				39081306240ABF6D0012A0AD /* NSBundle+TMBundle.m */,
 				39081313240B31FE0012A0AD /* Views */,
 				39081307240ABF6D0012A0AD /* TMCameraController.h */,
 				39081303240ABF6D0012A0AD /* TMCameraController.m */,
-				3908130C240ABF780012A0AD /* TMCameraController.xib */,
 				39081301240ABF6D0012A0AD /* TMClipViewController.h */,
 				39081305240ABF6D0012A0AD /* TMClipViewController.m */,
-				3908130D240ABF780012A0AD /* TMClipViewController.xib */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -324,8 +315,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3908130E240ABF780012A0AD /* TMCameraController.xib in Resources */,
-				3908130F240ABF780012A0AD /* TMClipViewController.xib in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -373,10 +362,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TMCamera_Example/Pods-TMCamera_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/TMCamera/TMCamera.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMCamera.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,12 +404,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39081319240B33490012A0AD /* TMTopView.m in Sources */,
-				3908130B240ABF6E0012A0AD /* NSBundle+TMBundle.m in Sources */,
 				6003F59E195388D20070C39A /* TMAppDelegate.m in Sources */,
 				3908131C240B35B30012A0AD /* TKImageView.m in Sources */,
-				39081316240B333F0012A0AD /* TMBottomView.m in Sources */,
+				39081324240B4CEB0012A0AD /* TMBottomView.m in Sources */,
 				39081309240ABF6E0012A0AD /* TMCameraController.m in Sources */,
+				39081323240B4CEB0012A0AD /* TMTopView.m in Sources */,
 				6003F5A7195388D20070C39A /* TMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				3908130A240ABF6E0012A0AD /* TMClipViewController.m in Sources */,
@@ -551,7 +541,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T7DLS38GH3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TMCamera/TMCamera-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/paulgao/upon/TMCamera/Example/TMCamera/TMCamera-Prefix.pch";
 				INFOPLIST_FILE = "TMCamera/TMCamera-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -568,7 +558,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T7DLS38GH3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TMCamera/TMCamera-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/paulgao/upon/TMCamera/Example/TMCamera/TMCamera-Prefix.pch";
 				INFOPLIST_FILE = "TMCamera/TMCamera-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";

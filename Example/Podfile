@@ -4,6 +4,8 @@ platform :ios, '8.0'
 
 target 'TMCamera_Example' do
   pod 'TMCamera', :path => '../'
+  pod 'PureLayout'
+  
   target 'TMCamera_Tests' do
     inherit! :search_paths
 

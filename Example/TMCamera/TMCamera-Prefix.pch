@@ -14,5 +14,3 @@
     @import UIKit;
     @import Foundation;
 #endif
-
-#import "NSBundle+TMBundle.h"

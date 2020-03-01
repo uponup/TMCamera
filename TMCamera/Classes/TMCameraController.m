@@ -9,13 +9,11 @@
 #import "TMCameraController.h"
 #import "TMClipViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "NSBundle+TMBundle.h"
+#import "TMCamera.h"
 
-#define KWIDTH [UIScreen mainScreen].bounds.size.width
-#define KHEIGHT [UIScreen mainScreen].bounds.size.height
-
-@interface TMCameraController () <UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TMClipPhotoDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@interface TMCameraController () <UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TMClipPhotoDelegate, TMTopViewDelegate, TMBottomViewDelegate>
+@property (nonatomic, strong) TMTopView *topView;
+@property (nonatomic, strong) TMBottomView *bottomView;
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureDeviceInput *videoInput;
@@ -33,9 +31,7 @@
 @implementation TMCameraController
 
 - (instancetype)init {
-    NSBundle *bundle = [NSBundle tm_subBundleWithBundleName:@"TMCameraController" podName:@"TMCamera"];
-    
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:bundle];
+    self = [super init];
     if (self) {
         self.modalPresentationStyle = UIModalPresentationFullScreen;
     }
@@ -45,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self initAVCaptureSession];
+    [self commonInit];
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
     pinch.delegate = self;
     [self.view addGestureRecognizer:pinch];
@@ -71,11 +67,7 @@
     [self focusAtPoint:point];
 }
 
-- (IBAction)dismissAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)openPhotoLibrary:(id)sender {
+- (void)openPhotoLibrary:(UIButton *)sender {
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         NSLog(@"没有权限");
         return;
@@ -88,7 +80,7 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
-- (IBAction)takePhots:(id)sender {
+- (void)takePhots:(UIButton *)sender {
     _stillImageConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
     UIDeviceOrientation curDeviceOrientation = [[UIDevice currentDevice] orientation];
     AVCaptureVideoOrientation avcaptureOrientation = [self avOrientationForDeviceOrientation:curDeviceOrientation];
@@ -101,7 +93,7 @@
     }];
 }
 
-- (IBAction)openFlashLamp:(UIButton *)sender {
+- (void)openFlashLamp:(UIButton *)sender {
     sender.selected = !sender.selected;
     if (sender.isSelected == YES) { //打开闪光灯
         AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -159,6 +151,21 @@
         
     }
     
+}
+#pragma mark - TMTopViewDelegate
+- (void)topviewDidClick {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - TMBottomViewDelegate
+- (void)bottomView:(TMBottomView *)view didClickAtIndex:(NSInteger)index andSender:(nonnull UIButton *)sender{
+    if (index==0) {
+        [self openPhotoLibrary:sender];
+    }else if (index==1){
+        [self takePhots:sender];
+    }else {
+        [self openFlashLamp:sender];
+    }
 }
 
 #pragma mark - Delegate: TMClipPhotoDelegate
@@ -250,6 +257,16 @@
 }
 
 #pragma mark - UI Init
+
+- (void)commonInit {
+    [self.view addSubview:self.topView];
+    [self.topView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+
+    [self.view addSubview:self.bottomView];
+    [self.bottomView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+
+    [self initAVCaptureSession];
+}
 - (void)initAVCaptureSession{
     
     self.session = [[AVCaptureSession alloc] init];
@@ -285,10 +302,32 @@
     self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
     [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
 
-    self.previewLayer.frame = CGRectMake(0, 0,KWIDTH, KHEIGHT);
+    self.previewLayer.frame = CGRectMake(0, 0, KWIDTH, KHEIGHT);
     self.view.layer.masksToBounds = YES;
     [self.view.layer insertSublayer:self.previewLayer atIndex:0];
     
     [self resetFocusAndExposureModes];
+}
+
+#pragma mark - Lazy Method
+- (TMTopView *)topView {
+    if (!_topView) {
+        _topView = [[TMTopView alloc] init];
+        _topView.title = @"拍照";
+        _topView.buttonTitle = @"返回";
+        _topView.delegate = self;
+    }
+    return _topView;
+}
+
+- (TMBottomView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [[TMBottomView alloc] init];
+        _bottomView.leftTitle = @"相册";
+        _bottomView.midTitle = @"拍照";
+        _bottomView.rightTitle = @"手电筒";
+        _bottomView.delegate = self;
+    }
+    return _bottomView;
 }
 @end

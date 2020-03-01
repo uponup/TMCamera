@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TMCamera'
-  s.version          = '0.1.8'
+  s.version          = '0.1.10'
   s.summary          = '简单实用的相机，可裁剪照片'
 
 # This description is used to generate tags and improve search results.
@@ -38,5 +38,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.xib'
   # s.frameworks = 'AVFoundation'
-  # s.dependency 'AFNetworking', '~> 2.3'
+   s.dependency 'PureLayout'
 end

@@ -1,16 +1,24 @@
 PODS:
-  - TMCamera (0.1.8)
+  - PureLayout (3.1.5)
+  - TMCamera (0.1.10):
+    - PureLayout
 
 DEPENDENCIES:
+  - PureLayout
   - TMCamera (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - PureLayout
 
 EXTERNAL SOURCES:
   TMCamera:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TMCamera: a01802da54234f514f7ac0d6b819d2e8871d953c
+  PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
+  TMCamera: a1e1c06ec8e835be666f769207d5568c5b0097c5
 
-PODFILE CHECKSUM: 29e7990c8b75522d4eeb0d029d4ce327c7a52e2d
+PODFILE CHECKSUM: 42f2edbfd720251f88c8126364fa6931ae504588
 
 COCOAPODS: 1.8.4
