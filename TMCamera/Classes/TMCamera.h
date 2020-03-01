@@ -10,7 +10,7 @@
 #define TMCamera_h
 
 
-#import "PureLayout.h"
+#import <PureLayout/PureLayout.h>
 #import "TMTopView.h"
 #import "TMBottomView.h"
 

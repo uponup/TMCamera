@@ -114,8 +114,6 @@
 
 - (TKImageView *)tkImageView {
     if (!_tkImageView) {
-        CGFloat top = self.headerView.frame.size.height;
-        
         _tkImageView = [[TKImageView alloc] initWithFrame:CGRectZero];
         _tkImageView.backgroundColor = UIColor.lightTextColor;
         //需要进行裁剪的图片对象
