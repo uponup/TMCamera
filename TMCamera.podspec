@@ -32,9 +32,9 @@ Pod::Spec.new do |s|
 
   s.source_files = 'TMCamera/Classes/**/*'
   
-   s.resource_bundles = {
-     'TMCamera' => ['TMCamera/Assets/*']
-   }
+#   s.resource_bundles = {
+#     'TMCamera' => ['TMCamera/Assets/*']
+#   }
 
   # s.public_header_files = 'Pod/Classes/**/*.xib'
   # s.frameworks = 'AVFoundation'
