@@ -171,9 +171,9 @@
 #pragma mark - Delegate: TMClipPhotoDelegate
 - (void)clipPhoto:(UIImage *)image {
     if (self.delegate && [self.delegate respondsToSelector:@selector(cameraVc:takesPhoto:)]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-        [self.delegate cameraVc:self takesPhoto:image];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:NO completion:^{
+            [self.delegate cameraVc:self takesPhoto:image];
+        }];
     }
 }
 

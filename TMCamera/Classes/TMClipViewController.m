@@ -79,14 +79,26 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+// 裁剪并保存
+- (void)clipAndSave {
+    UIImage *image = [_tkImageView currentCroppedImage];
+//    self.tkImageView.toCropImage = image;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(clipPhoto:)]) {
+        [self dismissViewControllerAnimated:NO completion:^{
+            [self.delegate clipPhoto:image];
+        }];
+    }
+}
+
 #pragma mark - TMBottomViewDelegate
 - (void)bottomView:(TMBottomView *)view didClickAtIndex:(NSInteger)index andSender:(UIButton *)sender {
     if (index==0) {
         [self dismissAction:sender];
     }else if (index==1) {
-        [self resizeAction:sender];
+//        [self resizeAction:sender];
     }else {
-        [self saveAction:sender];
+//        [self saveAction:sender];
+        [self clipAndSave];
     }
 }
 
@@ -148,8 +160,8 @@
     if (!_bottomView) {
         _bottomView = [[TMBottomView alloc] init];
         _bottomView.leftTitle = @"取消";
-        _bottomView.midTitle = @"裁剪";
-        _bottomView.rightTitle = @"完成";
+//        _bottomView.midTitle = @"裁剪";
+        _bottomView.rightTitle = @"裁剪";
         _bottomView.delegate = self;
     }
     return _bottomView;
