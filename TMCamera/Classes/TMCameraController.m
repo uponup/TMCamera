@@ -7,13 +7,15 @@
 //
 
 #import "TMCameraController.h"
-#import "TMClipViewController.h"
+#import "TMImageCropView.h"
+//#import "TMCCC.h"
 #import <AVFoundation/AVFoundation.h>
 #import "TMCamera.h"
 
-@interface TMCameraController () <UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TMClipPhotoDelegate, TMTopViewDelegate, TMBottomViewDelegate>
+@interface TMCameraController () <UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TMTopViewDelegate, TMBottomViewDelegate, TMImageCropViewDelegate>
 @property (nonatomic, strong) TMTopView *topView;
 @property (nonatomic, strong) TMBottomView *bottomView;
+@property (nonatomic, strong) TMImageCropView *cropView;
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureDeviceInput *videoInput;
@@ -73,6 +75,7 @@
         return;
     }
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.navigationBar.tintColor = UIColor.blackColor;
     picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     picker.delegate = self;
     picker.allowsEditing = NO;
@@ -152,6 +155,19 @@
     }
     
 }
+#pragma mark - TMImageCropViewDelegate
+- (void)imageCropViewDidCancelEdit {
+//    self.cropView.hidden = YES;
+}
+
+- (void)imageCropViewDidCompleteEditWithImage:(UIImage *)image {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cameraVc:takesPhoto:)]) {
+        [self dismissViewControllerAnimated:NO completion:^{
+            [self.delegate cameraVc:self takesPhoto:image];
+        }];
+    }
+}
+
 #pragma mark - TMTopViewDelegate
 - (void)topviewDidClick {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -165,15 +181,6 @@
         [self takePhots:sender];
     }else {
         [self openFlashLamp:sender];
-    }
-}
-
-#pragma mark - Delegate: TMClipPhotoDelegate
-- (void)clipPhoto:(UIImage *)image {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(cameraVc:takesPhoto:)]) {
-        [self dismissViewControllerAnimated:NO completion:^{
-            [self.delegate cameraVc:self takesPhoto:image];
-        }];
     }
 }
 
@@ -225,9 +232,9 @@
 
 //拍照之后调到相片详情页面
 - (void)jumpImageView:(NSData*)data{
-    TMClipViewController *viewController = [[TMClipViewController alloc] initWithImage:[UIImage imageWithData:data]];
-    viewController.delegate = self;
-    [self presentViewController:viewController animated:NO completion:nil];
+//    TMClipViewController *viewController = [[TMClipViewController alloc] initWithImage:[UIImage imageWithData:data]];
+//    viewController.delegate = self;
+//    [self presentViewController:viewController animated:NO completion:nil];
 }
 
 //聚焦
@@ -313,8 +320,6 @@
 - (TMTopView *)topView {
     if (!_topView) {
         _topView = [[TMTopView alloc] init];
-        _topView.title = @"拍照";
-        _topView.buttonTitle = @"返回";
         _topView.delegate = self;
     }
     return _topView;
@@ -326,5 +331,13 @@
         _bottomView.delegate = self;
     }
     return _bottomView;
+}
+
+- (TMImageCropView *)cropView {
+    if (!_cropView) {
+        _cropView = [[TMImageCropView alloc] init];
+        _cropView.delegate = self;
+    }
+    return _cropView;
 }
 @end

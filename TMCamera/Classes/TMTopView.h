@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)topviewDidClick;
 @end
 @interface TMTopView : UIView
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *buttonTitle;
 @property (nonatomic, assign) id<TMTopViewDelegate> delegate;
 @end
 
