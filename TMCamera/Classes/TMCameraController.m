@@ -323,9 +323,6 @@
 - (TMBottomView *)bottomView {
     if (!_bottomView) {
         _bottomView = [[TMBottomView alloc] init];
-        _bottomView.leftTitle = @"相册";
-        _bottomView.midTitle = @"拍照";
-        _bottomView.rightTitle = @"手电筒";
         _bottomView.delegate = self;
     }
     return _bottomView;

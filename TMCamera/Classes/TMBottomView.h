@@ -17,9 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface TMBottomView : UIView
-@property (nonatomic, copy) NSString *leftTitle;
-@property (nonatomic, copy) NSString *midTitle;
-@property (nonatomic, copy) NSString *rightTitle;
+@property (nonatomic, strong) NSArray<NSString *> *btnsImageNames;
 @property (nonatomic, assign) id<TMBottomViewDelegate> delegate;
 @end
 

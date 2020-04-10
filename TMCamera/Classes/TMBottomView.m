@@ -44,24 +44,63 @@
 }
 
 #pragma mark - Setter
-- (void)setLeftTitle:(NSString *)leftTitle {
-    _leftTitle = leftTitle;
-    [self.btnLeft setTitle:_leftTitle forState:UIControlStateNormal];
-}
-- (void)setMidTitle:(NSString *)midTitle {
-    _midTitle = midTitle;
-    [self.btnMid setTitle:_midTitle forState:UIControlStateNormal];
-}
-
-- (void)setRightTitle:(NSString *)rightTitle {
-    _rightTitle = rightTitle;
-    [self.btnRight setTitle:_rightTitle forState:UIControlStateNormal];
+- (void)setBtnsImageNames:(NSArray<NSString *> *)btnsImageNames {
+    if (btnsImageNames.count==0) {
+        self.btnLeft.hidden = YES;
+        self.btnMid.hidden = YES;
+        self.btnRight.hidden = YES;
+        return;
+    }
+    
+    if (btnsImageNames.count == 1) {
+        NSString *imgName = btnsImageNames.firstObject;
+        UIImage *img = [UIImage imageNamed:imgName];
+        
+        self.btnLeft.hidden = YES;
+        if (img) {
+            [self.btnMid setImage:img forState:UIControlStateNormal];
+        }else {
+            self.btnMid.hidden = YES;
+        }
+        self.btnRight.hidden = YES;
+        return;
+    }
+    
+    if (btnsImageNames.count == 2) {
+        UIImage *imgLeft = [UIImage imageNamed:btnsImageNames.firstObject];
+        UIImage *imgRight = [UIImage imageNamed:btnsImageNames.lastObject];
+        if (imgLeft) {
+            [self.btnLeft setImage:imgLeft forState:UIControlStateNormal];
+        }else {
+            self.btnLeft.hidden = YES;
+        }
+        self.btnMid.hidden = YES;
+        if (imgRight) {
+            [self.btnRight setImage:imgRight forState:UIControlStateNormal];
+        }else {
+            self.btnRight.hidden = YES;
+        }
+        return;
+    }
+    
+    NSArray *tempArr = @[self.btnLeft, self.btnMid, self.btnRight];
+    NSInteger i=0;
+    for (UIButton *btn in tempArr) {
+        UIImage *img = [UIImage imageNamed:btnsImageNames[i]];
+        if (img) {
+            [btn setImage:img forState:UIControlStateNormal];
+        }else {
+            btn.hidden = YES;
+        }
+        i++;
+    }
 }
 
 #pragma mark - UI Init
 - (void)commonInit {
     self.btnMid = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnMid.titleLabel.font = [UIFont systemFontOfSize:17];
+    [self.btnMid setImage:[UIImage imageNamed:@"ic_take_photo"] forState:UIControlStateNormal];
     [self.btnMid addTarget:self action:@selector(btnMidAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnMid];
     
@@ -72,6 +111,7 @@
     
     self.btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
+    [self.btnLeft setImage:[UIImage imageNamed:@"ic_photo"] forState:UIControlStateNormal];
     [self.btnLeft addTarget:self action:@selector(btnLeftAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnLeft];
     [self.btnLeft autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnMid];
@@ -79,6 +119,7 @@
     
     self.btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnRight.titleLabel.font = [UIFont systemFontOfSize:17];
+    [self.btnRight setImage:[UIImage imageNamed:@"ic_sdt"] forState:UIControlStateNormal];
     [self.btnRight addTarget:self action:@selector(btnRightAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnRight];
     [self.btnRight autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnMid];

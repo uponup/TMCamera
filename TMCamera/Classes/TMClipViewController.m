@@ -159,9 +159,7 @@
 - (TMBottomView *)bottomView {
     if (!_bottomView) {
         _bottomView = [[TMBottomView alloc] init];
-        _bottomView.leftTitle = @"取消";
-//        _bottomView.midTitle = @"裁剪";
-        _bottomView.rightTitle = @"裁剪";
+        _bottomView.btnsImageNames = @[@"ic_close", @"ic_yes"];
         _bottomView.delegate = self;
     }
     return _bottomView;
