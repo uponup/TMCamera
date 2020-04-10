@@ -15,6 +15,7 @@
 #import "TMCamera.h"
 #import "TMCameraController.h"
 #import "TMClipViewController.h"
+#import "TMImageCropView.h"
 #import "TMTopView.h"
 
 FOUNDATION_EXPORT double TMCameraVersionNumber;

@@ -7,6 +7,8 @@
 //
 
 #import "TKImageView.h"
+//由角度转换弧度
+#define kDegreesToRadian(x)      (M_PI * (x) / 180.0)
 #define WIDTH(_view) CGRectGetWidth(_view.bounds)
 #define HEIGHT(_view) CGRectGetHeight(_view.bounds)
 #define MAXX(_view) CGRectGetMaxX(_view.frame)
@@ -835,13 +837,13 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
     CGFloat selfAspectRatio = WIDTH(self) / HEIGHT(self);
     if(_imageAspectRatio > selfAspectRatio) {
         _paddingLeftRight = 0;
-        _paddingTopBottom = floor((HEIGHT(self) - WIDTH(self) / _imageAspectRatio) / 2.0);
-        _imageView.frame = CGRectMake(0, _paddingTopBottom, WIDTH(self), floor(WIDTH(self) / _imageAspectRatio));
+        _paddingTopBottom = 0;
+        _imageView.frame = CGRectMake(0, _paddingTopBottom, WIDTH(self), HEIGHT(self));
     }
     else {
         _paddingTopBottom = 0;
         _paddingLeftRight = floor((WIDTH(self) - HEIGHT(self) * _imageAspectRatio) / 2.0);
-        _imageView.frame = CGRectMake(_paddingLeftRight, 0, floor(HEIGHT(self) * _imageAspectRatio), HEIGHT(self));
+        _imageView.frame = CGRectMake(_paddingLeftRight, 0, WIDTH(self), HEIGHT(self));
     }
     
 }
@@ -869,7 +871,7 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
             height = width / _cropAspectRatio;
         }
     }
-    _cropAreaView.frame = CGRectMake((WIDTH(_imageView) - width) / 2.0, (HEIGHT(_imageView) - height) / 2.0, width, height);
+    _cropAreaView.frame = CGRectMake((WIDTH(_imageView) - width) / 2.0, (HEIGHT(_imageView) - height) / 2.0-24, width, height);
     [self resetCornersOnCropAreaFrameChanged];
     [self resetCropTransparentArea];
     [self resetMinSpaceIfNeeded];
@@ -1149,6 +1151,45 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
     return [_toCropImage imageAtRect: CGRectMake((MINX(_cropAreaView) + _cropAreaBorderLineWidth) / scaleFactor, (MINY(_cropAreaView) + _cropAreaBorderLineWidth) / scaleFactor, (WIDTH(_cropAreaView) - 2 * _cropAreaBorderLineWidth) / scaleFactor, (HEIGHT(_cropAreaView) - 2 * _cropAreaBorderLineWidth) / scaleFactor)];
     
 }
+
+
+#pragma mark - Private Method
+/** 将图片旋转角度degrees */
+- (UIImage *)imageRotatedByDegrees:(CGFloat)degrees {
+    return [self imageRotatedByRadians:kDegreesToRadian(degrees)];
+}
+
+/** 将图片旋转弧度radians */
+- (UIImage *)imageRotatedByRadians:(CGFloat)radians {
+    // calculate the size of the rotated view's containing box for our drawing space
+    UIImage *image = [UIImage imageWithCGImage:_imageView.image.CGImage scale:1.0 orientation:UIImageOrientationRight];
+    return image;
+    
+    UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _imageView.frame.size.width, _imageView.frame.size.height)];
+    CGAffineTransform t = CGAffineTransformMakeRotation(radians);
+    rotatedViewBox.transform = t;
+    CGSize rotatedSize = rotatedViewBox.frame.size;
+    
+    // Create the bitmap context
+    UIGraphicsBeginImageContext(rotatedSize);
+    CGContextRef bitmap = UIGraphicsGetCurrentContext();
+    
+    // Move the origin to the middle of the image so we will rotate and scale around the center.
+    CGContextTranslateCTM(bitmap, rotatedSize.width/2, rotatedSize.height/2);
+    
+    //   // Rotate the image context
+    CGContextRotateCTM(bitmap, radians);
+    
+    // Now, draw the rotated/scaled image into the context
+    CGContextScaleCTM(bitmap, 1.0, -1.0);
+    CGContextDrawImage(bitmap, CGRectMake(-_imageView.frame.size.width / 2, -_imageView.frame.size.height / 2, _imageView.frame.size.width, _imageView.frame.size.height), [_imageView.image CGImage]);
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 @end
 
 

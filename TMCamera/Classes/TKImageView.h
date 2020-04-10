@@ -34,4 +34,5 @@ typedef NS_ENUM(NSInteger, TKCropAreaCornerStyle) {
 @property (assign, nonatomic) CGFloat initialScaleFactor;
 @property (nonatomic, assign) BOOL showLine;
 - (UIImage *)currentCroppedImage;
+- (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
 @end

@@ -8,7 +8,6 @@
 
 #import "TMCameraController.h"
 #import "TMImageCropView.h"
-//#import "TMCCC.h"
 #import <AVFoundation/AVFoundation.h>
 #import "TMCamera.h"
 
@@ -138,8 +137,7 @@
         if (self.effectiveScale < 1.0){
             self.effectiveScale = 1.0;
         }
-        
-        NSLog(@"%f-------------->%f------------recognizerScale%f",self.effectiveScale,self.beginGestureScale,recognizer.scale);
+    NSLog(@"%f-------------->%f------------recognizerScale%f",self.effectiveScale,self.beginGestureScale,recognizer.scale);
         
         CGFloat maxScaleAndCropFactor = [[self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo] videoMaxScaleAndCropFactor];
         
@@ -151,19 +149,19 @@
         [CATransaction setAnimationDuration:.025];
         [self.previewLayer setAffineTransform:CGAffineTransformMakeScale(self.effectiveScale, self.effectiveScale)];
         [CATransaction commit];
-        
     }
     
 }
 #pragma mark - TMImageCropViewDelegate
 - (void)imageCropViewDidCancelEdit {
-//    self.cropView.hidden = YES;
+    self.cropView.hidden = YES;
 }
 
 - (void)imageCropViewDidCompleteEditWithImage:(UIImage *)image {
     if (self.delegate && [self.delegate respondsToSelector:@selector(cameraVc:takesPhoto:)]) {
         [self dismissViewControllerAnimated:NO completion:^{
             [self.delegate cameraVc:self takesPhoto:image];
+            self.cropView.hidden = YES;
         }];
     }
 }
@@ -232,9 +230,9 @@
 
 //拍照之后调到相片详情页面
 - (void)jumpImageView:(NSData*)data{
-//    TMClipViewController *viewController = [[TMClipViewController alloc] initWithImage:[UIImage imageWithData:data]];
-//    viewController.delegate = self;
-//    [self presentViewController:viewController animated:NO completion:nil];
+    UIImage *image = [UIImage imageWithData:data];
+    [self.cropView updateImage:image];
+    self.cropView.hidden = NO;
 }
 
 //聚焦
@@ -272,6 +270,9 @@
     [self.view addSubview:self.bottomView];
     [self.bottomView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
 
+    [self.view addSubview:self.cropView];
+    [self.cropView autoPinEdgesToSuperviewEdges];
+    
     [self initAVCaptureSession];
 }
 - (void)initAVCaptureSession{
@@ -337,6 +338,7 @@
     if (!_cropView) {
         _cropView = [[TMImageCropView alloc] init];
         _cropView.delegate = self;
+        _cropView.hidden = YES;
     }
     return _cropView;
 }

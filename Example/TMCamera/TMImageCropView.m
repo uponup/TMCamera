@@ -10,9 +10,12 @@
 #import "TKImageView.h"
 #import "TMCamera.h"
     
-@interface TMImageCropView ()
+@interface TMImageCropView () {
+    NSInteger _rotateCount;
+}
 @property (nonatomic, strong) TKImageView *ivCrop;
 @property (nonatomic, strong) UIButton *btnClose;
+@property (nonatomic, strong) UIButton *btnRotate;
 @property (nonatomic, strong) UIButton *btnSave;
 @end
 
@@ -21,6 +24,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _rotateCount = 0;
         [self commonInit];
     }
     return self;
@@ -32,6 +36,12 @@
 
 #pragma mark - Action
 
+- (void)btnCloseAction:(UIButton *)btn {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(imageCropViewDidCancelEdit)]) {
+        [self.delegate imageCropViewDidCancelEdit];
+    }
+}
+
 - (void)btnSaveAction:(UIButton *)btn {
     UIImage *currentImage = [self.ivCrop currentCroppedImage];
     if (self.delegate && [self.delegate respondsToSelector:@selector(imageCropViewDidCompleteEditWithImage:)]) {
@@ -39,10 +49,10 @@
     }
 }
 
-- (void)btnCloseAction:(UIButton *)btn {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(imageCropViewDidCancelEdit)]) {
-        [self.delegate imageCropViewDidCancelEdit];
-    }
+- (void)btnRotateAction:(UIButton *)btn {
+    _rotateCount++;
+    UIImage *image = [self.ivCrop imageRotatedByDegrees:0];
+    self.ivCrop.toCropImage = image;
 }
 
 #pragma mark - Init UI
@@ -53,6 +63,10 @@
     [self addSubview:self.btnClose];
     [self.btnClose autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:40];
     [self.btnClose autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:15+BOTTOM_SAFE_AREA_HEIGTHT];
+    
+    [self addSubview:self.btnRotate];
+    [self.btnRotate autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [self.btnRotate autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:15+BOTTOM_SAFE_AREA_HEIGTHT];
     
     [self addSubview:self.btnSave];
     [self.btnSave autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:40];
@@ -73,7 +87,7 @@
         _ivCrop.showCrossLines = YES;
         _ivCrop.cornerBorderInImage = NO;
         _ivCrop.cropAreaCornerWidth = 44;
-        _ivCrop.cropAreaCornerHeight = 44;
+        _ivCrop.cropAreaCornerHeight = 84;
         _ivCrop.minSpace = 30;
         _ivCrop.cropAreaCornerLineColor = [UIColor whiteColor];
         _ivCrop.cropAreaBorderLineColor = [UIColor whiteColor];
@@ -95,15 +109,28 @@
 - (UIButton *)btnSave {
     if (!_btnSave) {
         _btnSave = [UIButton buttonWithType:UIButtonTypeCustom];
+        _btnSave.bounds = CGRectMake(0, 0, 44, 44);
         [_btnSave setImage:[UIImage imageNamed:@"ic_yes"] forState:UIControlStateNormal];
         [_btnSave addTarget:self action:@selector(btnSaveAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnSave;
 }
 
+- (UIButton *)btnRotate {
+    if (!_btnRotate) {
+        _btnRotate = [UIButton buttonWithType:UIButtonTypeCustom];
+        _btnRotate.bounds = CGRectMake(0, 0, 44, 44);
+        [_btnRotate setImage:[UIImage imageNamed:@"ic_rotate"] forState:UIControlStateNormal];
+        [_btnRotate addTarget:self action:@selector(btnRotateAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _btnRotate;
+}
+
 - (UIButton *)btnClose {
     if (!_btnClose) {
         _btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
+        _btnClose.bounds = CGRectMake(0, 0, 44, 44);
+        [_btnClose setImage:[UIImage imageNamed:@"ic_close"] forState:UIControlStateNormal];
         [_btnClose addTarget:self action:@selector(btnCloseAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnClose;
