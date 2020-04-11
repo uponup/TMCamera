@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TMImageCropView : UIView
 
+@property (nonatomic, strong) UIColor *cropBorderColor;
 @property (nonatomic, weak) id<TMImageCropViewDelegate> delegate;
 - (void)updateImage:(UIImage *)image;
 

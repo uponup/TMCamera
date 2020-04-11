@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 @class TMCameraController;
 
-NS_ASSUME_NONNULL_BEGIN
+typedef NSString * TMCropAttributeKey NS_TYPED_ENUM;
+extern TMCropAttributeKey const TMCropBorderColorKey;
 
 typedef NS_ENUM(NSInteger, TMCameraAuthStatus) {
     TMCameraAuthStatus_avNotDetermined = 1,
@@ -28,7 +29,6 @@ typedef NS_ENUM(NSInteger, TMCameraAuthStatus) {
 @interface TMCameraController : UIViewController
 @property (nonatomic, assign) id<TMCameraControllerDelegate> delegate;
 
-//- (instancetype)init;
+- (instancetype)initWithConfig:(NSDictionary<TMCropAttributeKey, id> *)config;
 @end
 
-NS_ASSUME_NONNULL_END

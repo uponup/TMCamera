@@ -11,6 +11,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "TMCamera.h"
 
+NSString * const TMCropBorderColorKey = @"kTMCropBorderColorKey";
+
 @interface TMCameraController () <UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TMTopViewDelegate, TMBottomViewDelegate, TMImageCropViewDelegate>
 @property (nonatomic, strong) TMTopView *topView;
 @property (nonatomic, strong) TMBottomView *bottomView;
@@ -26,15 +28,23 @@
 @property (nonatomic, assign) CGFloat effectiveScale;       // 缩放比例最后值
 @property (nonatomic, strong) NSData *jpegData;
 @property (nonatomic, assign) CFDictionaryRef attachments;
+@property (nonatomic, strong) NSDictionary<TMCropAttributeKey, id> *config;
+
 
 @end
 
 @implementation TMCameraController
 
 - (instancetype)init {
+    NSDictionary *attributeConfig = @{ TMCropBorderColorKey: UIColor.whiteColor };
+    return [self initWithConfig:attributeConfig];
+}
+
+- (instancetype)initWithConfig:(NSDictionary<TMCropAttributeKey,id> *)config {
     self = [super init];
     if (self) {
         self.modalPresentationStyle = UIModalPresentationFullScreen;
+        self.config = config;
     }
     return self;
 }
@@ -350,6 +360,7 @@
     if (!_cropView) {
         _cropView = [[TMImageCropView alloc] init];
         _cropView.delegate = self;
+        _cropView.cropBorderColor = self.config[TMCropBorderColorKey];
         _cropView.hidden = YES;
     }
     return _cropView;
