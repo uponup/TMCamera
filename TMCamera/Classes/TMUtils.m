@@ -13,9 +13,9 @@
 
 + (NSBundle *)currentBundle {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-//    NSURL *bundleURL = [bundle URLForResource:@"TMCamer" withExtension:@"bundle"];
-//    NSBundle *resourceBundle = [NSBundle bundleWithURL: bundleURL];
-    return bundle;
+    NSURL *bundleURL = [bundle URLForResource:@"TMCamera" withExtension:@"bundle"];
+    NSBundle *resourceBundle = [NSBundle bundleWithURL: bundleURL];
+    return resourceBundle;
 }
 
 + (UIImage *)imageCustomNamed:(NSString *)name {
