@@ -21,6 +21,9 @@
     NSBundle *resourceBundle = [NSBundle bundleWithURL:associateBundleURL];
 //    NSBundle *resourceBundle = [NSBundle bundleWithURL: bundleURL];
 //    return resourceBundle;
+    if (!resourceBundle) {
+        resourceBundle = [NSBundle bundleForClass:[TMUtils class]];
+    }
     return resourceBundle;
 }
 

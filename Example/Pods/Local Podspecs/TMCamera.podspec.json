@@ -21,7 +21,7 @@
   "source_files": "TMCamera/Classes/**/*",
   "resource_bundles": {
     "TMCamera": [
-      "TMCamera/Assets/*"
+      "TMCamera/Assets/**/*.png"
     ]
   },
   "dependencies": {
