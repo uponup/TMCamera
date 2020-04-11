@@ -12,25 +12,27 @@
 		0BDB463156691FFF9AA1D44F9859E8EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E1C8ECFE9284F04F4D4F2A875AA4C1 /* Foundation.framework */; };
 		0E6F88F2189494756C4FD69B5BBA98B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E1C8ECFE9284F04F4D4F2A875AA4C1 /* Foundation.framework */; };
 		1D3CA8E4C9E20D824A4A06D41FF6452B /* Pods-TMCamera_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6E126563D938604DD22CE44F84B285 /* Pods-TMCamera_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		276388A1C62820A29BF229353CBF5B68 /* ic_rotate.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 65B4EC9BE5345072F000B8C7EF35A99A /* ic_rotate.imageset */; };
+		20547509A2BC2C764CA1997150590593 /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC1E43DD9D68426C70B699BDC193B09 /* ic_close.png */; };
 		29F477B426E97AC81C2D867965814EE7 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 811BB1F77DF1D26DA6D10E55C3F5FD77 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C32AEF443C243D53C52CDF7CEAACF57 /* ic_rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = F10BEA046216F4BF999E234555AE845F /* ic_rotate.png */; };
 		2C6C5471CAD27B30B90756EA455F4E27 /* TMCameraController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CD00E4C71060E4D25519ABE35F5F508 /* TMCameraController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33EE8A8C3C63C552A45EC61549D25121 /* ic_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9024543AF9678BC8937629813727B644 /* ic_back.png */; };
 		34C81CE766C5C598904EAAE8C8F82335 /* TMImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A760121858ADFC7E0241EECC722A95 /* TMImageCropView.m */; };
 		3FEA79AB938D263EDD0576109321847D /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 41B3F903FE080908C2AFBBA4932358FD /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42628C1AEA1104583D4524586C934731 /* Pods-TMCamera_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 675A7ADC80FEAEF236993296A952F7C9 /* Pods-TMCamera_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4279727787D174D093F10A2BA818CD7F /* ic_close.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 33CA7058A3B85B195EAB527A12F4F71D /* ic_close.imageset */; };
 		462BA98745E4ACF40BB3D70438B36932 /* TMBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF648A3F524CF953AE9BD3B6ACC44576 /* TMBottomView.m */; };
 		516464DB7004848131A1A280E725BB30 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A487CDB25B1CE53697EAA747710CE9 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5721F110940A2F5F5520251FD9DF14F2 /* TMImageCropView.h in Headers */ = {isa = PBXBuildFile; fileRef = F0163DC503667D3FD0F4E38660396707 /* TMImageCropView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B869F3F6EB059D8CEF1B399E5D5BF9A /* Pods-TMCamera_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C12C23B724684DBC0FFF07CDA240A62 /* Pods-TMCamera_Tests-dummy.m */; };
-		70BDE3677D59F2FACBAF3A77BB50A553 /* ic_take_photo.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E211429004286A42BBAB4711B667E02C /* ic_take_photo.imageset */; };
+		638465E57C183F62E0F2D543D74DF65E /* ic_sdt.png in Resources */ = {isa = PBXBuildFile; fileRef = F363376459B44D92F07218F60B6FCD86 /* ic_sdt.png */; };
 		8435A3600B953DEFCEAEE215D723E35C /* TMTopView.h in Headers */ = {isa = PBXBuildFile; fileRef = 49008B5B58723F727FC22461D5F234E2 /* TMTopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86BC2BBFA6A34D4E91009D725CCE1523 /* ic_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AE4AACC8C021E3D90F23564D104C26B /* ic_yes.png */; };
+		87DE0DF267BB0D80662B72E1A157E888 /* ic_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C71AC8CF41053D58EBB6A887372B28 /* ic_photo.png */; };
 		90E11860B6F9BDC73E00A1AF0116A0BA /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D077F2984229344A027CCB45BA10C7 /* ALView+PureLayout.m */; };
 		91FDD5AB09D637B31443414840FFCDA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E1C8ECFE9284F04F4D4F2A875AA4C1 /* Foundation.framework */; };
 		9223200B02BA7497AA198CA2FE3A3E44 /* Pods-TMCamera_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E66286CF860946A9A12DE39995F1EF23 /* Pods-TMCamera_Example-dummy.m */; };
-		95928130F377135176E89B33D89654CC /* ic_back.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 7A6CDC0DFD49767DFEC8EAD5E8AE65DF /* ic_back.imageset */; };
 		A2C5DFD4EE53F71AF2892BF42FBEC26E /* TMCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B4E66FFB1EB76C5E02FBB56282854A /* TMCameraController.m */; };
-		A5193F72507DE8427FFCAD0998C7CFC8 /* ic_photo.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 3E8485E5828827AD8ED6BC3EE459941C /* ic_photo.imageset */; };
+		A8A7087072421100D7A6D911E4EEB57B /* ic_take_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 011EBCF88ACEE685B970F397CBAC064C /* ic_take_photo.png */; };
 		A8F67BEECF40AE6EAA67CDA6B114625A /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06AA4C08CD7F731602FF781270AE453 /* PureLayout.framework */; };
 		AC8F8266726C4E3DF30689EA07CCD0F5 /* TMCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F733992D7AA27FA2843D4B1E7D701757 /* TMCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACC3A0A21BC2DC5033FD2A048AFFDB01 /* TMCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD41318A472455A4B0A92F3FF39788 /* TMCamera-dummy.m */; };
@@ -44,11 +46,9 @@
 		DBF45D59546F58E4F8118B65DBC9B0F4 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DC49C411550EDCCD0D26568F143C53 /* NSLayoutConstraint+PureLayout.m */; };
 		DDFFB8E20CB1EBA0BE6885671437788F /* TMBottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D7EE5C4825FE4719C3FF4CDC506E58 /* TMBottomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E39323FED1552E68351108BEF7850760 /* TKImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB508E410158A48A9E0AC6A89BED664 /* TKImageView.m */; };
-		E3C72926A0FA881B9395A8461F447797 /* ic_yes.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 9D6EF8DE07B2D1962600FD73F31BE564 /* ic_yes.imageset */; };
 		E4DA91B7ADAF19592FCAF3D27C7EA4E3 /* TMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B715790059CFB9A2D42B281AC3373CD /* TMUtils.m */; };
 		EE3903AC92477CAE5D7295E0C04082C0 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F5F4272F4E425B8D3F5D40A63A5090 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F41B49527C50BFED1796306BE2C2EF3B /* TMCamera.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B9C6B26DFB5764308E17CBDFB2132FE6 /* TMCamera.bundle */; };
-		F668C9D9A288B05CA579A93CE62AFE1C /* ic_sdt.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 7366931B286312E7789704D50A27993E /* ic_sdt.imageset */; };
 		F718B38F6C531AC3355A1D481A552C0F /* TMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 55D55D8FC20670E6192FDE3E1F715BF5 /* TMUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -91,11 +91,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		011EBCF88ACEE685B970F397CBAC064C /* ic_take_photo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ic_take_photo.png; path = TMCamera/Assets/ic_take_photo.png; sourceTree = "<group>"; };
 		02E1C8ECFE9284F04F4D4F2A875AA4C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0CEC176129931A3EC2C5DF74F075ECC3 /* Pods-TMCamera_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TMCamera_Example.release.xcconfig"; sourceTree = "<group>"; };
 		0D017BC29843B9A5F002168A01137640 /* TMTopView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TMTopView.m; path = TMCamera/Classes/TMTopView.m; sourceTree = "<group>"; };
 		15A760121858ADFC7E0241EECC722A95 /* TMImageCropView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TMImageCropView.m; path = TMCamera/Classes/TMImageCropView.m; sourceTree = "<group>"; };
 		1780CED49928A7BE02DB6DD2C8FF83B1 /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
+		18C71AC8CF41053D58EBB6A887372B28 /* ic_photo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ic_photo.png; path = TMCamera/Assets/ic_photo.png; sourceTree = "<group>"; };
 		1B839928D69A972D3BF0445E8E7A6795 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		1EDA7E10F205E2A7DCF2126D223CDF9D /* Pods-TMCamera_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TMCamera_Tests-Info.plist"; sourceTree = "<group>"; };
 		1F6417E5E9198255EBEF1551F288758F /* Pods-TMCamera_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TMCamera_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,38 +105,35 @@
 		262A89FE278EA58E65AC9CEE6769DE32 /* Pods-TMCamera_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TMCamera_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2ACE830E9B4175DAE5FE94D9F0DBB371 /* Pods-TMCamera_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TMCamera_Example.modulemap"; sourceTree = "<group>"; };
 		2D5C45F74FC9D66B099D0F53DEE1E575 /* PureLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PureLayout-Info.plist"; sourceTree = "<group>"; };
-		33CA7058A3B85B195EAB527A12F4F71D /* ic_close.imageset */ = {isa = PBXFileReference; includeInIndex = 1; name = ic_close.imageset; path = TMCamera/Assets/ic_close.imageset; sourceTree = "<group>"; };
 		374E10612AEBCF1F3D3F5615480CCC0A /* TMCamera-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TMCamera-Info.plist"; sourceTree = "<group>"; };
 		3C12C23B724684DBC0FFF07CDA240A62 /* Pods-TMCamera_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TMCamera_Tests-dummy.m"; sourceTree = "<group>"; };
 		3CD00E4C71060E4D25519ABE35F5F508 /* TMCameraController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TMCameraController.h; path = TMCamera/Classes/TMCameraController.h; sourceTree = "<group>"; };
-		3E8485E5828827AD8ED6BC3EE459941C /* ic_photo.imageset */ = {isa = PBXFileReference; includeInIndex = 1; name = ic_photo.imageset; path = TMCamera/Assets/ic_photo.imageset; sourceTree = "<group>"; };
 		41B3F903FE080908C2AFBBA4932358FD /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
 		49008B5B58723F727FC22461D5F234E2 /* TMTopView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TMTopView.h; path = TMCamera/Classes/TMTopView.h; sourceTree = "<group>"; };
 		4D6E126563D938604DD22CE44F84B285 /* Pods-TMCamera_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TMCamera_Tests-umbrella.h"; sourceTree = "<group>"; };
 		4FD9EE247128F58CE7A55F8E784F8CC4 /* TMCamera.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TMCamera.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5128B4353B1BD59D044A0F8165F9605E /* TMCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TMCamera.xcconfig; sourceTree = "<group>"; };
 		55D55D8FC20670E6192FDE3E1F715BF5 /* TMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TMUtils.h; path = TMCamera/Classes/TMUtils.h; sourceTree = "<group>"; };
+		5AE4AACC8C021E3D90F23564D104C26B /* ic_yes.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ic_yes.png; path = TMCamera/Assets/ic_yes.png; sourceTree = "<group>"; };
 		636267AF1FCB85528CD0D0FEBE110B49 /* TMCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TMCamera.framework; path = TMCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D077F2984229344A027CCB45BA10C7 /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
 		652A2BF95CA5027B7A42E81D83DCC751 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		65B4EC9BE5345072F000B8C7EF35A99A /* ic_rotate.imageset */ = {isa = PBXFileReference; includeInIndex = 1; name = ic_rotate.imageset; path = TMCamera/Assets/ic_rotate.imageset; sourceTree = "<group>"; };
 		66B4E66FFB1EB76C5E02FBB56282854A /* TMCameraController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TMCameraController.m; path = TMCamera/Classes/TMCameraController.m; sourceTree = "<group>"; };
 		675A7ADC80FEAEF236993296A952F7C9 /* Pods-TMCamera_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TMCamera_Example-umbrella.h"; sourceTree = "<group>"; };
 		69E7DAFC2B1EA86BE0453AB683FFE477 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
 		6F880792581E25501BC99D5A089CD510 /* Pods-TMCamera_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TMCamera_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		7366931B286312E7789704D50A27993E /* ic_sdt.imageset */ = {isa = PBXFileReference; includeInIndex = 1; name = ic_sdt.imageset; path = TMCamera/Assets/ic_sdt.imageset; sourceTree = "<group>"; };
 		77F5F4272F4E425B8D3F5D40A63A5090 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
-		7A6CDC0DFD49767DFEC8EAD5E8AE65DF /* ic_back.imageset */ = {isa = PBXFileReference; includeInIndex = 1; name = ic_back.imageset; path = TMCamera/Assets/ic_back.imageset; sourceTree = "<group>"; };
 		7B715790059CFB9A2D42B281AC3373CD /* TMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TMUtils.m; path = TMCamera/Classes/TMUtils.m; sourceTree = "<group>"; };
 		7D1062453953315BF5EB5382444A0BBB /* Pods-TMCamera_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TMCamera_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7DB3585DBEEA33CC020ACEF3881CF5AD /* Pods-TMCamera_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TMCamera_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		811BB1F77DF1D26DA6D10E55C3F5FD77 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
 		84A487CDB25B1CE53697EAA747710CE9 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		9024543AF9678BC8937629813727B644 /* ic_back.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ic_back.png; path = TMCamera/Assets/ic_back.png; sourceTree = "<group>"; };
 		90FE141AB17ED52030151AEBF0FC895A /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
 		92A83FB6F2F212E66E8F74A0F2A4B12D /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
 		96E6FA1730F0F90A1F1DC3C3FED080EF /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
 		98BFDDAB1A84BE32390BAB7E0C84562A /* Pods-TMCamera_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TMCamera_Tests.modulemap"; sourceTree = "<group>"; };
-		9D6EF8DE07B2D1962600FD73F31BE564 /* ic_yes.imageset */ = {isa = PBXFileReference; includeInIndex = 1; name = ic_yes.imageset; path = TMCamera/Assets/ic_yes.imageset; sourceTree = "<group>"; };
+		9AC1E43DD9D68426C70B699BDC193B09 /* ic_close.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ic_close.png; path = TMCamera/Assets/ic_close.png; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B06AA4C08CD7F731602FF781270AE453 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C7508168F5BC89133319D9ABEC4940 /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
@@ -149,7 +148,6 @@
 		D55AA7834FE4A1BFBC5E462E195EB5DB /* Pods-TMCamera_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TMCamera_Example-frameworks.sh"; sourceTree = "<group>"; };
 		DEDE8DF8D1EF9ADE86511FBECCEEEA40 /* ResourceBundle-TMCamera-TMCamera-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TMCamera-TMCamera-Info.plist"; sourceTree = "<group>"; };
 		E13D84C33FEA93D48F3DD3E9BC246379 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
-		E211429004286A42BBAB4711B667E02C /* ic_take_photo.imageset */ = {isa = PBXFileReference; includeInIndex = 1; name = ic_take_photo.imageset; path = TMCamera/Assets/ic_take_photo.imageset; sourceTree = "<group>"; };
 		E4D7EE5C4825FE4719C3FF4CDC506E58 /* TMBottomView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TMBottomView.h; path = TMCamera/Classes/TMBottomView.h; sourceTree = "<group>"; };
 		E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66286CF860946A9A12DE39995F1EF23 /* Pods-TMCamera_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TMCamera_Example-dummy.m"; sourceTree = "<group>"; };
@@ -157,8 +155,10 @@
 		ECB508E410158A48A9E0AC6A89BED664 /* TKImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKImageView.m; path = TMCamera/Classes/TKImageView.m; sourceTree = "<group>"; };
 		EF0717B1F2DEA8D6F4C27AC4B14E44A0 /* TMCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TMCamera.modulemap; sourceTree = "<group>"; };
 		F0163DC503667D3FD0F4E38660396707 /* TMImageCropView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TMImageCropView.h; path = TMCamera/Classes/TMImageCropView.h; sourceTree = "<group>"; };
+		F10BEA046216F4BF999E234555AE845F /* ic_rotate.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ic_rotate.png; path = TMCamera/Assets/ic_rotate.png; sourceTree = "<group>"; };
 		F12B357EC9451B4170A392A305C330CA /* Pods-TMCamera_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TMCamera_Example-Info.plist"; sourceTree = "<group>"; };
 		F270AFAF9C505AB61E315B3AC8DC2A46 /* TMCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TMCamera-prefix.pch"; sourceTree = "<group>"; };
+		F363376459B44D92F07218F60B6FCD86 /* ic_sdt.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ic_sdt.png; path = TMCamera/Assets/ic_sdt.png; sourceTree = "<group>"; };
 		F733992D7AA27FA2843D4B1E7D701757 /* TMCamera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TMCamera-umbrella.h"; sourceTree = "<group>"; };
 		FEAD41318A472455A4B0A92F3FF39788 /* TMCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TMCamera-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -342,7 +342,7 @@
 				55D55D8FC20670E6192FDE3E1F715BF5 /* TMUtils.h */,
 				7B715790059CFB9A2D42B281AC3373CD /* TMUtils.m */,
 				8C434359C65DA39BEFD46D0A1A2AD6C0 /* Pod */,
-				E1D4A525243442240ABB3E7D83EAC2D5 /* Resources */,
+				C09BF28EA343BB1E45F4AEB1B0120A7F /* Resources */,
 				350D4756DFE4A6A017F7A51F411528ED /* Support Files */,
 			);
 			name = TMCamera;
@@ -367,6 +367,20 @@
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
+		C09BF28EA343BB1E45F4AEB1B0120A7F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9024543AF9678BC8937629813727B644 /* ic_back.png */,
+				9AC1E43DD9D68426C70B699BDC193B09 /* ic_close.png */,
+				18C71AC8CF41053D58EBB6A887372B28 /* ic_photo.png */,
+				F10BEA046216F4BF999E234555AE845F /* ic_rotate.png */,
+				F363376459B44D92F07218F60B6FCD86 /* ic_sdt.png */,
+				011EBCF88ACEE685B970F397CBAC064C /* ic_take_photo.png */,
+				5AE4AACC8C021E3D90F23564D104C26B /* ic_yes.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -385,20 +399,6 @@
 				BD6B3EE379FEC1E3191301DD5B0A1192 /* TMCamera */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		E1D4A525243442240ABB3E7D83EAC2D5 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7A6CDC0DFD49767DFEC8EAD5E8AE65DF /* ic_back.imageset */,
-				33CA7058A3B85B195EAB527A12F4F71D /* ic_close.imageset */,
-				3E8485E5828827AD8ED6BC3EE459941C /* ic_photo.imageset */,
-				65B4EC9BE5345072F000B8C7EF35A99A /* ic_rotate.imageset */,
-				7366931B286312E7789704D50A27993E /* ic_sdt.imageset */,
-				E211429004286A42BBAB4711B667E02C /* ic_take_photo.imageset */,
-				9D6EF8DE07B2D1962600FD73F31BE564 /* ic_yes.imageset */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,7 +515,7 @@
 			buildPhases = (
 				E6C55D383B69F8A392664B6ED9DA4E12 /* Sources */,
 				A31824E9379A0A7DE06069A593D34345 /* Frameworks */,
-				5C5FD4DA76F1967D8BE33813A79A70D7 /* Resources */,
+				C4E6848F732810FD8FC9BF3A55A8BCBD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -585,20 +585,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C5FD4DA76F1967D8BE33813A79A70D7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95928130F377135176E89B33D89654CC /* ic_back.imageset in Resources */,
-				4279727787D174D093F10A2BA818CD7F /* ic_close.imageset in Resources */,
-				A5193F72507DE8427FFCAD0998C7CFC8 /* ic_photo.imageset in Resources */,
-				276388A1C62820A29BF229353CBF5B68 /* ic_rotate.imageset in Resources */,
-				F668C9D9A288B05CA579A93CE62AFE1C /* ic_sdt.imageset in Resources */,
-				70BDE3677D59F2FACBAF3A77BB50A553 /* ic_take_photo.imageset in Resources */,
-				E3C72926A0FA881B9395A8461F447797 /* ic_yes.imageset in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		693D6118C8EA30DA148B4891A30AFD5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -610,6 +596,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4E6848F732810FD8FC9BF3A55A8BCBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33EE8A8C3C63C552A45EC61549D25121 /* ic_back.png in Resources */,
+				20547509A2BC2C764CA1997150590593 /* ic_close.png in Resources */,
+				87DE0DF267BB0D80662B72E1A157E888 /* ic_photo.png in Resources */,
+				2C32AEF443C243D53C52CDF7CEAACF57 /* ic_rotate.png in Resources */,
+				638465E57C183F62E0F2D543D74DF65E /* ic_sdt.png in Resources */,
+				A8A7087072421100D7A6D911E4EEB57B /* ic_take_photo.png in Resources */,
+				86BC2BBFA6A34D4E91009D725CCE1523 /* ic_yes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

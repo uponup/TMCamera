@@ -1,6 +1,6 @@
 PODS:
   - PureLayout (3.1.5)
-  - TMCamera (0.2.4):
+  - TMCamera (0.2.5):
     - PureLayout
 
 DEPENDENCIES:
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
-  TMCamera: 3994c9d29786d45d9de292dccf54bb3140d33061
+  TMCamera: 23c5102b37765d57af5342fe604e0bd59f8a7e28
 
 PODFILE CHECKSUM: 42f2edbfd720251f88c8126364fa6931ae504588
 
