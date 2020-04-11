@@ -123,7 +123,7 @@
     if (!_btnSave) {
         _btnSave = [UIButton buttonWithType:UIButtonTypeCustom];
         _btnSave.bounds = CGRectMake(0, 0, 44, 44);
-        [_btnSave setImage:[UIImage imageNamed:@"ic_yes"] forState:UIControlStateNormal];
+        [_btnSave setImage:[TMUtils imageCustomNamed:@"ic_yes"] forState:UIControlStateNormal];
         [_btnSave addTarget:self action:@selector(btnSaveAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnSave;
@@ -133,7 +133,7 @@
     if (!_btnRotate) {
         _btnRotate = [UIButton buttonWithType:UIButtonTypeCustom];
         _btnRotate.bounds = CGRectMake(0, 0, 44, 44);
-        [_btnRotate setImage:[UIImage imageNamed:@"ic_rotate"] forState:UIControlStateNormal];
+        [_btnRotate setImage:[TMUtils imageCustomNamed:@"ic_rotate"] forState:UIControlStateNormal];
         [_btnRotate addTarget:self action:@selector(btnRotateAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnRotate;
@@ -143,7 +143,7 @@
     if (!_btnClose) {
         _btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
         _btnClose.bounds = CGRectMake(0, 0, 44, 44);
-        [_btnClose setImage:[UIImage imageNamed:@"ic_close"] forState:UIControlStateNormal];
+        [_btnClose setImage:[TMUtils imageCustomNamed:@"ic_close"] forState:UIControlStateNormal];
         [_btnClose addTarget:self action:@selector(btnCloseAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnClose;

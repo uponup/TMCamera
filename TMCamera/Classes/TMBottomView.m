@@ -54,7 +54,7 @@
     
     if (btnsImageNames.count == 1) {
         NSString *imgName = btnsImageNames.firstObject;
-        UIImage *img = [UIImage imageNamed:imgName];
+        UIImage *img = [TMUtils imageCustomNamed:imgName];
         
         self.btnLeft.hidden = YES;
         if (img) {
@@ -67,8 +67,8 @@
     }
     
     if (btnsImageNames.count == 2) {
-        UIImage *imgLeft = [UIImage imageNamed:btnsImageNames.firstObject];
-        UIImage *imgRight = [UIImage imageNamed:btnsImageNames.lastObject];
+        UIImage *imgLeft = [TMUtils imageCustomNamed:btnsImageNames.firstObject];
+        UIImage *imgRight = [TMUtils imageCustomNamed:btnsImageNames.lastObject];
         if (imgLeft) {
             [self.btnLeft setImage:imgLeft forState:UIControlStateNormal];
         }else {
@@ -86,7 +86,7 @@
     NSArray *tempArr = @[self.btnLeft, self.btnMid, self.btnRight];
     NSInteger i=0;
     for (UIButton *btn in tempArr) {
-        UIImage *img = [UIImage imageNamed:btnsImageNames[i]];
+        UIImage *img = [TMUtils imageCustomNamed:btnsImageNames[i]];
         if (img) {
             [btn setImage:img forState:UIControlStateNormal];
         }else {
@@ -100,7 +100,7 @@
 - (void)commonInit {
     self.btnMid = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnMid.titleLabel.font = [UIFont systemFontOfSize:17];
-    [self.btnMid setImage:[UIImage imageNamed:@"ic_take_photo"] forState:UIControlStateNormal];
+    [self.btnMid setImage:[TMUtils imageCustomNamed:@"ic_take_photo"] forState:UIControlStateNormal];
     [self.btnMid addTarget:self action:@selector(btnMidAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnMid];
     
@@ -111,7 +111,7 @@
     
     self.btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
-    [self.btnLeft setImage:[UIImage imageNamed:@"ic_photo"] forState:UIControlStateNormal];
+    [self.btnLeft setImage:[TMUtils imageCustomNamed:@"ic_photo"] forState:UIControlStateNormal];
     [self.btnLeft addTarget:self action:@selector(btnLeftAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnLeft];
     [self.btnLeft autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnMid];
@@ -119,7 +119,7 @@
     
     self.btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnRight.titleLabel.font = [UIFont systemFontOfSize:17];
-    [self.btnRight setImage:[UIImage imageNamed:@"ic_sdt"] forState:UIControlStateNormal];
+    [self.btnRight setImage:[TMUtils imageCustomNamed:@"ic_sdt"] forState:UIControlStateNormal];
     [self.btnRight addTarget:self action:@selector(btnRightAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnRight];
     [self.btnRight autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnMid];

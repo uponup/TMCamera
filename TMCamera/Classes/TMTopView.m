@@ -42,7 +42,7 @@
     [self.labelTitle autoPinEdgeToSuperviewEdge:ALEdgeBottom];
     
     self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.btn setImage:[UIImage imageNamed:@"ic_back"] forState:UIControlStateNormal];
+    [self.btn setImage:[TMUtils imageCustomNamed:@"ic_back"] forState:UIControlStateNormal];
     [self.btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btn];
     [self.btn autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.labelTitle];
