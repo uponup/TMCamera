@@ -1,9 +1,5 @@
 # TMCamera
 
-[![CI Status](https://img.shields.io/travis/uponup/TMCamera.svg?style=flat)](https://travis-ci.org/uponup/TMCamera)
-[![Version](https://img.shields.io/cocoapods/v/TMCamera.svg?style=flat)](https://cocoapods.org/pods/TMCamera)
-[![License](https://img.shields.io/cocoapods/l/TMCamera.svg?style=flat)](https://cocoapods.org/pods/TMCamera)
-[![Platform](https://img.shields.io/cocoapods/p/TMCamera.svg?style=flat)](https://cocoapods.org/pods/TMCamera)
 
 ## Example
 
