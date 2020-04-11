@@ -81,13 +81,13 @@
     [self.bottomView addSubview:self.btnClose];
     [self.btnClose autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:40];
     [self.btnClose autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnRotate];
-    [self.btnClose autoSetDimensionsToSize:CGSizeMake(32, 32)];
+//    [self.btnClose autoSetDimensionsToSize:CGSizeMake(32, 32)];
     
     
     [self.bottomView addSubview:self.btnSave];
     [self.btnSave autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:40];
     [self.btnSave autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnRotate];
-    [self.btnSave autoSetDimensionsToSize:CGSizeMake(40, 32)];
+//    [self.btnSave autoSetDimensionsToSize:CGSizeMake(40, 32)];
 }
 
 #pragma mark - Lazy Method
@@ -126,7 +126,8 @@
 - (UIButton *)btnSave {
     if (!_btnSave) {
         _btnSave = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_btnSave setImage:[TMUtils imageCustomNamed:@"ic_yes"] forState:UIControlStateNormal];
+//        [_btnSave setImage:[TMUtils imageCustomNamed:@"ic_yes"] forState:UIControlStateNormal];
+        [_btnSave setTitle:@"完成" forState:UIControlStateNormal];
         [_btnSave addTarget:self action:@selector(btnSaveAction:) forControlEvents:UIControlEventTouchUpInside];
         _btnSave.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
     }
@@ -136,7 +137,8 @@
 - (UIButton *)btnRotate {
     if (!_btnRotate) {
         _btnRotate = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_btnRotate setImage:[TMUtils imageCustomNamed:@"ic_rotate"] forState:UIControlStateNormal];
+//        [_btnRotate setImage:[TMUtils imageCustomNamed:@"ic_rotate"] forState:UIControlStateNormal];
+        [_btnRotate setTitle:@"旋转" forState:UIControlStateNormal];
         [_btnRotate addTarget:self action:@selector(btnRotateAction:) forControlEvents:UIControlEventTouchUpInside];
         _btnRotate.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
     }
@@ -146,7 +148,8 @@
 - (UIButton *)btnClose {
     if (!_btnClose) {
         _btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_btnClose setImage:[TMUtils imageCustomNamed:@"ic_close"] forState:UIControlStateNormal];
+//        [_btnClose setImage:[TMUtils imageCustomNamed:@"ic_close"] forState:UIControlStateNormal];
+        [_btnClose setTitle:@"关闭" forState:UIControlStateNormal];
         [_btnClose addTarget:self action:@selector(btnCloseAction:) forControlEvents:UIControlEventTouchUpInside];
         _btnClose.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
     }

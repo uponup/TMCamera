@@ -44,7 +44,9 @@
     self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.btn autoSetDimensionsToSize:CGSizeMake(32, 32)];
     self.btn.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
-    [self.btn setImage:[TMUtils imageCustomNamed:@"ic_back"] forState:UIControlStateNormal];
+//    [self.btn setImage:[TMUtils imageCustomNamed:@"ic_back"] forState:UIControlStateNormal];
+    [self.btn setTitle:@"返回" forState:UIControlStateNormal];
+    [self.btn.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [self.btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btn];
     [self.btn autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.labelTitle];

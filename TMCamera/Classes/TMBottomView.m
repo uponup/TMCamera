@@ -58,7 +58,7 @@
         
         self.btnLeft.hidden = YES;
         if (img) {
-            [self.btnMid setImage:img forState:UIControlStateNormal];
+//            [self.btnMid setImage:img forState:UIControlStateNormal];
         }else {
             self.btnMid.hidden = YES;
         }
@@ -70,13 +70,13 @@
         UIImage *imgLeft = [TMUtils imageCustomNamed:btnsImageNames.firstObject];
         UIImage *imgRight = [TMUtils imageCustomNamed:btnsImageNames.lastObject];
         if (imgLeft) {
-            [self.btnLeft setImage:imgLeft forState:UIControlStateNormal];
+//            [self.btnLeft setImage:imgLeft forState:UIControlStateNormal];
         }else {
             self.btnLeft.hidden = YES;
         }
         self.btnMid.hidden = YES;
         if (imgRight) {
-            [self.btnRight setImage:imgRight forState:UIControlStateNormal];
+//            [self.btnRight setImage:imgRight forState:UIControlStateNormal];
         }else {
             self.btnRight.hidden = YES;
         }
@@ -88,7 +88,7 @@
     for (UIButton *btn in tempArr) {
         UIImage *img = [TMUtils imageCustomNamed:btnsImageNames[i]];
         if (img) {
-            [btn setImage:img forState:UIControlStateNormal];
+//            [btn setImage:img forState:UIControlStateNormal];
         }else {
             btn.hidden = YES;
         }
@@ -100,7 +100,8 @@
 - (void)commonInit {
     self.btnMid = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnMid.titleLabel.font = [UIFont systemFontOfSize:17];
-    [self.btnMid setImage:[TMUtils imageCustomNamed:@"ic_take_photo"] forState:UIControlStateNormal];
+    [self.btnMid setTitle:@"拍照" forState:UIControlStateNormal];
+//    [self.btnMid setImage:[TMUtils imageCustomNamed:@"ic_take_photo"] forState:UIControlStateNormal];
     [self.btnMid addTarget:self action:@selector(btnMidAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnMid];
     
@@ -111,17 +112,19 @@
     
     self.btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.btnLeft autoSetDimensionsToSize:CGSizeMake(32, 32)];
-    self.btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
-    [self.btnLeft setImage:[TMUtils imageCustomNamed:@"ic_photo"] forState:UIControlStateNormal];
+    [self.btnLeft setTitle:@"相册" forState:UIControlStateNormal];
+    self.btnLeft.titleLabel.font = [UIFont systemFontOfSize:15];
+//    [self.btnLeft setImage:[TMUtils imageCustomNamed:@"ic_photo"] forState:UIControlStateNormal];
     [self.btnLeft addTarget:self action:@selector(btnLeftAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnLeft];
     [self.btnLeft autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnMid];
     [self.btnLeft autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.btnMid withOffset:-90];
     
     self.btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.btnRight autoSetDimensionsToSize:CGSizeMake(32, 32)];
-    self.btnRight.titleLabel.font = [UIFont systemFontOfSize:17];
-    [self.btnRight setImage:[TMUtils imageCustomNamed:@"ic_sdt"] forState:UIControlStateNormal];
+//    [self.btnRight autoSetDimensionsToSize:CGSizeMake(32, 32)];
+    [self.btnRight setTitle:@"手电筒" forState:UIControlStateNormal];
+    self.btnRight.titleLabel.font = [UIFont systemFontOfSize:15];
+//    [self.btnRight setImage:[TMUtils imageCustomNamed:@"ic_sdt"] forState:UIControlStateNormal];
     [self.btnRight addTarget:self action:@selector(btnRightAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnRight];
     [self.btnRight autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnMid];
