@@ -9,7 +9,8 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Design sketch
+![sketch](https://github.com/uponup/PrivacyPolicy/raw/master/TMCamera.gif)
 
 ## Installation
 
