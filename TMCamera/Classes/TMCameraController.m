@@ -150,8 +150,20 @@
         [self.previewLayer setAffineTransform:CGAffineTransformMakeScale(self.effectiveScale, self.effectiveScale)];
         [CATransaction commit];
     }
-    
 }
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    NSLog(@"...cancel picker");
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    UIImage *img = info[UIImagePickerControllerOriginalImage];
+    NSData *imgData = UIImagePNGRepresentation(img);
+    [self jumpImageView:imgData];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - TMImageCropViewDelegate
 - (void)imageCropViewDidCancelEdit {
     self.cropView.hidden = YES;

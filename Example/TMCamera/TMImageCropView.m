@@ -65,6 +65,8 @@
     [self.btnClose autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:15+BOTTOM_SAFE_AREA_HEIGTHT];
     
     [self addSubview:self.btnRotate];
+    
+    self.btnRotate.hidden = YES;
     [self.btnRotate autoAlignAxisToSuperviewAxis:ALAxisVertical];
     [self.btnRotate autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:15+BOTTOM_SAFE_AREA_HEIGTHT];
     

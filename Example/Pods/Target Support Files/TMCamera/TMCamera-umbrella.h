@@ -14,7 +14,6 @@
 #import "TMBottomView.h"
 #import "TMCamera.h"
 #import "TMCameraController.h"
-#import "TMClipViewController.h"
 #import "TMImageCropView.h"
 #import "TMTopView.h"
 

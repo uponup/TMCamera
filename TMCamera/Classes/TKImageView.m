@@ -1161,10 +1161,6 @@ typedef NS_ENUM(NSInteger, TKMidLineType) {
 
 /** 将图片旋转弧度radians */
 - (UIImage *)imageRotatedByRadians:(CGFloat)radians {
-    // calculate the size of the rotated view's containing box for our drawing space
-    UIImage *image = [UIImage imageWithCGImage:_imageView.image.CGImage scale:1.0 orientation:UIImageOrientationRight];
-    return image;
-    
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _imageView.frame.size.width, _imageView.frame.size.height)];
     CGAffineTransform t = CGAffineTransformMakeRotation(radians);
     rotatedViewBox.transform = t;
