@@ -75,15 +75,19 @@
     [self.btnRotate autoAlignAxisToSuperviewAxis:ALAxisVertical];
     [self.btnRotate autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:15+BOTTOM_SAFE_AREA_HEIGTHT];
     [self.btnRotate autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
+    [self.btnRotate autoSetDimension:ALDimensionHeight toSize:32];
+
     
     [self.bottomView addSubview:self.btnClose];
     [self.btnClose autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:40];
     [self.btnClose autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnRotate];
+    [self.btnClose autoSetDimensionsToSize:CGSizeMake(32, 32)];
     
     
     [self.bottomView addSubview:self.btnSave];
     [self.btnSave autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:40];
     [self.btnSave autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.btnRotate];
+    [self.btnSave autoSetDimensionsToSize:CGSizeMake(40, 32)];
 }
 
 #pragma mark - Lazy Method
@@ -122,9 +126,9 @@
 - (UIButton *)btnSave {
     if (!_btnSave) {
         _btnSave = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btnSave.bounds = CGRectMake(0, 0, 44, 44);
         [_btnSave setImage:[TMUtils imageCustomNamed:@"ic_yes"] forState:UIControlStateNormal];
         [_btnSave addTarget:self action:@selector(btnSaveAction:) forControlEvents:UIControlEventTouchUpInside];
+        _btnSave.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
     }
     return _btnSave;
 }
@@ -132,9 +136,9 @@
 - (UIButton *)btnRotate {
     if (!_btnRotate) {
         _btnRotate = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btnRotate.bounds = CGRectMake(0, 0, 44, 44);
         [_btnRotate setImage:[TMUtils imageCustomNamed:@"ic_rotate"] forState:UIControlStateNormal];
         [_btnRotate addTarget:self action:@selector(btnRotateAction:) forControlEvents:UIControlEventTouchUpInside];
+        _btnRotate.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
     }
     return _btnRotate;
 }
@@ -142,9 +146,9 @@
 - (UIButton *)btnClose {
     if (!_btnClose) {
         _btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btnClose.bounds = CGRectMake(0, 0, 44, 44);
         [_btnClose setImage:[TMUtils imageCustomNamed:@"ic_close"] forState:UIControlStateNormal];
         [_btnClose addTarget:self action:@selector(btnCloseAction:) forControlEvents:UIControlEventTouchUpInside];
+        _btnClose.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
     }
     return _btnClose;
 }

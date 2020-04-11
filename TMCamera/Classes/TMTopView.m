@@ -42,6 +42,8 @@
     [self.labelTitle autoPinEdgeToSuperviewEdge:ALEdgeBottom];
     
     self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.btn autoSetDimensionsToSize:CGSizeMake(32, 32)];
+    self.btn.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
     [self.btn setImage:[TMUtils imageCustomNamed:@"ic_back"] forState:UIControlStateNormal];
     [self.btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btn];

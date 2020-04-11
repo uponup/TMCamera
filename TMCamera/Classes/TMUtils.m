@@ -12,9 +12,15 @@
 @implementation TMUtils
 
 + (NSBundle *)currentBundle {
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSURL *bundleURL = [bundle URLForResource:@"TMCamera" withExtension:@"bundle"];
-    NSBundle *resourceBundle = [NSBundle bundleWithURL: bundleURL];
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSURL *associateBundleURL = [bundle URLForResource:@"Frameworks" withExtension:nil];
+    associateBundleURL = [associateBundleURL URLByAppendingPathComponent:@"TMCamera"];
+    associateBundleURL = [associateBundleURL URLByAppendingPathExtension:@"framework"];
+    NSBundle *associateBunle = [NSBundle bundleWithURL:associateBundleURL];
+    associateBundleURL = [associateBunle URLForResource:@"TMCamera" withExtension:@"bundle"];
+    NSBundle *resourceBundle = [NSBundle bundleWithURL:associateBundleURL];
+//    NSBundle *resourceBundle = [NSBundle bundleWithURL: bundleURL];
+//    return resourceBundle;
     return resourceBundle;
 }
 

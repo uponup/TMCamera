@@ -107,9 +107,10 @@
     [self.btnMid autoAlignAxisToSuperviewAxis:ALAxisVertical];
     [self.btnMid autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
     [self.btnMid autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:5 + BOTTOM_SAFE_AREA_HEIGTHT];
-//    [self.btnMid autoSetDimensionsToSize:CGSizeMake(44, 44)];
+    [self.btnMid autoSetDimensionsToSize:CGSizeMake(64, 64)];
     
     self.btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.btnLeft autoSetDimensionsToSize:CGSizeMake(32, 32)];
     self.btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
     [self.btnLeft setImage:[TMUtils imageCustomNamed:@"ic_photo"] forState:UIControlStateNormal];
     [self.btnLeft addTarget:self action:@selector(btnLeftAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -118,6 +119,7 @@
     [self.btnLeft autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.btnMid withOffset:-90];
     
     self.btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.btnRight autoSetDimensionsToSize:CGSizeMake(32, 32)];
     self.btnRight.titleLabel.font = [UIFont systemFontOfSize:17];
     [self.btnRight setImage:[TMUtils imageCustomNamed:@"ic_sdt"] forState:UIControlStateNormal];
     [self.btnRight addTarget:self action:@selector(btnRightAction:) forControlEvents:UIControlEventTouchUpInside];
