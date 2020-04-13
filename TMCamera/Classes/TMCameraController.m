@@ -7,13 +7,16 @@
 //
 
 #import "TMCameraController.h"
-#import "TMClipViewController.h"
+#import "TMImageCropView.h"
 #import <AVFoundation/AVFoundation.h>
 #import "TMCamera.h"
 
-@interface TMCameraController () <UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TMClipPhotoDelegate, TMTopViewDelegate, TMBottomViewDelegate>
+NSString * const TMCropBorderColorKey = @"kTMCropBorderColorKey";
+
+@interface TMCameraController () <UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TMTopViewDelegate, TMBottomViewDelegate, TMImageCropViewDelegate>
 @property (nonatomic, strong) TMTopView *topView;
 @property (nonatomic, strong) TMBottomView *bottomView;
+@property (nonatomic, strong) TMImageCropView *cropView;
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureDeviceInput *videoInput;
@@ -25,15 +28,23 @@
 @property (nonatomic, assign) CGFloat effectiveScale;       // 缩放比例最后值
 @property (nonatomic, strong) NSData *jpegData;
 @property (nonatomic, assign) CFDictionaryRef attachments;
+@property (nonatomic, strong) NSDictionary<TMCropAttributeKey, id> *config;
+
 
 @end
 
 @implementation TMCameraController
 
 - (instancetype)init {
+    NSDictionary *attributeConfig = @{ TMCropBorderColorKey: UIColor.whiteColor };
+    return [self initWithConfig:attributeConfig];
+}
+
+- (instancetype)initWithConfig:(NSDictionary<TMCropAttributeKey,id> *)config {
     self = [super init];
     if (self) {
         self.modalPresentationStyle = UIModalPresentationFullScreen;
+        self.config = config;
     }
     return self;
 }
@@ -73,6 +84,7 @@
         return;
     }
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.navigationBar.tintColor = UIColor.blackColor;
     picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     picker.delegate = self;
     picker.allowsEditing = NO;
@@ -135,8 +147,7 @@
         if (self.effectiveScale < 1.0){
             self.effectiveScale = 1.0;
         }
-        
-        NSLog(@"%f-------------->%f------------recognizerScale%f",self.effectiveScale,self.beginGestureScale,recognizer.scale);
+    NSLog(@"%f-------------->%f------------recognizerScale%f",self.effectiveScale,self.beginGestureScale,recognizer.scale);
         
         CGFloat maxScaleAndCropFactor = [[self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo] videoMaxScaleAndCropFactor];
         
@@ -148,10 +159,35 @@
         [CATransaction setAnimationDuration:.025];
         [self.previewLayer setAffineTransform:CGAffineTransformMakeScale(self.effectiveScale, self.effectiveScale)];
         [CATransaction commit];
-        
     }
-    
 }
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    NSLog(@"...cancel picker");
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    UIImage *img = info[UIImagePickerControllerOriginalImage];
+    NSData *imgData = UIImagePNGRepresentation(img);
+    [self jumpImageView:imgData];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - TMImageCropViewDelegate
+- (void)imageCropViewDidCancelEdit {
+    self.cropView.hidden = YES;
+}
+
+- (void)imageCropViewDidCompleteEditWithImage:(UIImage *)image {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cameraVc:takesPhoto:)]) {
+        [self dismissViewControllerAnimated:NO completion:^{
+            [self.delegate cameraVc:self takesPhoto:image];
+            self.cropView.hidden = YES;
+        }];
+    }
+}
+
 #pragma mark - TMTopViewDelegate
 - (void)topviewDidClick {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -165,15 +201,6 @@
         [self takePhots:sender];
     }else {
         [self openFlashLamp:sender];
-    }
-}
-
-#pragma mark - Delegate: TMClipPhotoDelegate
-- (void)clipPhoto:(UIImage *)image {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(cameraVc:takesPhoto:)]) {
-        [self dismissViewControllerAnimated:NO completion:^{
-            [self.delegate cameraVc:self takesPhoto:image];
-        }];
     }
 }
 
@@ -225,9 +252,9 @@
 
 //拍照之后调到相片详情页面
 - (void)jumpImageView:(NSData*)data{
-    TMClipViewController *viewController = [[TMClipViewController alloc] initWithImage:[UIImage imageWithData:data]];
-    viewController.delegate = self;
-    [self presentViewController:viewController animated:NO completion:nil];
+    UIImage *image = [UIImage imageWithData:data];
+    [self.cropView updateImage:image];
+    self.cropView.hidden = NO;
 }
 
 //聚焦
@@ -265,6 +292,9 @@
     [self.view addSubview:self.bottomView];
     [self.bottomView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
 
+    [self.view addSubview:self.cropView];
+    [self.cropView autoPinEdgesToSuperviewEdges];
+    
     [self initAVCaptureSession];
 }
 - (void)initAVCaptureSession{
@@ -313,8 +343,6 @@
 - (TMTopView *)topView {
     if (!_topView) {
         _topView = [[TMTopView alloc] init];
-        _topView.title = @"拍照";
-        _topView.buttonTitle = @"返回";
         _topView.delegate = self;
     }
     return _topView;
@@ -326,5 +354,15 @@
         _bottomView.delegate = self;
     }
     return _bottomView;
+}
+
+- (TMImageCropView *)cropView {
+    if (!_cropView) {
+        _cropView = [[TMImageCropView alloc] init];
+        _cropView.delegate = self;
+        _cropView.cropBorderColor = self.config[TMCropBorderColorKey];
+        _cropView.hidden = YES;
+    }
+    return _cropView;
 }
 @end

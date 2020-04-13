@@ -13,6 +13,7 @@
 #import <PureLayout/PureLayout.h>
 #import "TMTopView.h"
 #import "TMBottomView.h"
+#import "TMUtils.h"
 
 #define KWIDTH [UIScreen mainScreen].bounds.size.width
 #define KHEIGHT [UIScreen mainScreen].bounds.size.height
